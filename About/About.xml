@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+  <name>GiTS Cyberbrains</name>
+  <author>themoistestwhale</author>
+  <packageId>moistestWhale.gitsCyberbrains</packageId>
+  <url>https://steamcommunity.com/sharedfiles/filedetails/?id=3272114598</url>
+  <modVersion>1.0.3</modVersion>
+
+  <supportedVersions>
+    <li>1.4</li>
+    <li>1.5</li>
+  </supportedVersions>
+
+  <loadBefore>
+  <!-- n/a-->
+  </loadBefore>
+  <loadAfter>
+    <li>CETeam.CombatExtended</li>
+  </loadAfter>
+  <incompatibleWith>
+  <!-- no known incompatible mods-->
+  </incompatibleWith>
+
+  <description>Adds 23 advanced cyberbrains from the world of Ghost in the Shell! Also adds cyberbrain diseases and drawbacks, a new craftable resource, micromachine treatments, and a research tree for it all!</description>
+
+</ModMetaData>

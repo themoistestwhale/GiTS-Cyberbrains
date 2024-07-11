@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Specialized Combat Cyberbrains-->
+<Defs>
+<!-- ***Specialized Cyberbrains***
+Hanka HCQ11 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecCombatBase">
+		<defName>gitsHCQ11Hediff</defName>
+		<label>Hanka HCQ11 cyberbrain</label>
+		<labelNoun>an installed HCQ11 cyberbrain</labelNoun>
+		<description>A Hanka HCQ11 cyberbrain, where the user has had a majority of the brain cyberized and a metal shell installed. This cyberbrain is specialized to enhance a user's melee combat abilities in all aspects.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsHCQ11Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsHCQ11Cyberbrain</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<MeleeHitChance>6</MeleeHitChance> <!-- HCQ11 specific-->
+					<MeleeDodgeChance>8</MeleeDodgeChance> <!-- HCQ11 specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+				<statFactors>
+					<MoveSpeed>1.12</MoveSpeed> <!-- HCQ11 specific-->
+					<MeleeDamageFactor MayRequire="Ludeon.RimWorld.Biotech">1.1</MeleeDamageFactor> <!-- HCQ11 specific-->
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+					<li>gitsPainReceptorNullify</li>
+					<li>gitsFirstAidDBUplink</li>
+					<li>gitsCQBDBUplink</li>
+        </abilityDefs>
+      </li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsHCQ11Cyberbrain</defName>
+		<label>Hanka HCQ11 cyberbrain</label>
+		<description>This specialized Hanka HCQ11 cyberbrain focuses on enhancing a user's melee combat abilities in all aspects.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsHCQ11Hediff</HediffDef>
+			<RecipeDef>gitsInstallHCQ11Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallHCQ11Cyberbrain</defName>
+		<label>install Hanka HCQ11 cyberbrain</label>
+		<description>Install a Hanka HCQ11 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsHCQ11Cyberbrain</ThingDef>
+			<HediffDef>gitsHCQ11Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Hanka HCQ11 Cyberbrain.</jobString>
+		<addsHediff>gitsHCQ11Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsHCQ11Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsHCQ11Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Hanka HCQ14T Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecCombatBase">
+		<defName>gitsHCQ14THediff</defName>
+		<label>Hanka HCQ14T cyberbrain</label>
+		<labelNoun>an installed HCQ14T cyberbrain</labelNoun>
+		<description>A Hanka HCQ14T cyberbrain, where the user has had a majority of the brain cyberized and a metal shell installed. This cyberbrain is specialized to enhance a user's melee combat abilities through sheer damage output, and is best used with heavy hard-hitting melee weapons.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsHCQ14TCyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsHCQ14TCyberbrain</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<MeleeHitChance>2</MeleeHitChance> <!-- HCQ14T specific-->
+					<MeleeDodgeChance>8</MeleeDodgeChance> <!-- HCQ14T specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+				<statFactors>
+					<MeleeWeapon_DamageMultiplier>1.85</MeleeWeapon_DamageMultiplier> <!-- HCQ14T specific-->
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+					<li>gitsPainReceptorNullify</li>
+					<li>gitsFirstAidDBUplink</li>
+					<li>gitsCQBDBUplink</li>
+        </abilityDefs>
+      </li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsHCQ14TCyberbrain</defName>
+		<label>Hanka HCQ14T cyberbrain</label>
+		<description>This specialized Hanka HCQ14T cyberbrain focuses on enhancing a user's melee combat abilities through sheer damage output, and is best used with heavy hard-hitting melee weapons.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsHCQ14THediff</HediffDef>
+			<RecipeDef>gitsInstallHCQ14TCyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallHCQ14TCyberbrain</defName>
+		<label>install Hanka HCQ14T cyberbrain</label>
+		<description>Install a Hanka HCQ14T cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsHCQ14TCyberbrain</ThingDef>
+			<HediffDef>gitsHCQ14THediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Hanka HCQ14T Cyberbrain.</jobString>
+		<addsHediff>gitsHCQ14THediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsHCQ14TCyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsHCQ14TCyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Hanka HCQ14N Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecCombatBase">
+		<defName>gitsHCQ14NHediff</defName>
+		<label>Hanka HCQ14N cyberbrain</label>
+		<labelNoun>an installed HCQ14N cyberbrain</labelNoun>
+		<description>A Hanka HCQ14N cyberbrain, where the user has had a majority of the brain cyberized and a metal shell installed. This cyberbrain is specialized to enhance a user's melee combat abilities through quick melee attacks, and is best used with light melee weapons.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsHCQ14NCyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsHCQ14NCyberbrain</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<MeleeHitChance>12</MeleeHitChance> <!-- HCQ14N specific-->
+					<MeleeDodgeChance>16</MeleeDodgeChance> <!-- HCQ14N specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+				<statFactors>
+					<MoveSpeed>1.25</MoveSpeed> <!-- HCQ14N specific-->
+					<MeleeDamageFactor MayRequire="Ludeon.RimWorld.Biotech">0.85</MeleeDamageFactor> <!-- HCQ14N specific-->
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+					<li>gitsPainReceptorNullify</li>
+					<li>gitsFirstAidDBUplink</li>
+					<li>gitsCQBDBUplink</li>
+        </abilityDefs>
+      </li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsHCQ14NCyberbrain</defName>
+		<label>Hanka HCQ14N cyberbrain</label>
+		<description>This specialized Hanka HCQ14N cyberbrain focuses on enhancing a user's melee combat abilities through quick melee attacks, and is best used with light melee weapons.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsHCQ14NHediff</HediffDef>
+			<RecipeDef>gitsInstallHCQ14NCyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallHCQ14NCyberbrain</defName>
+		<label>install Hanka HCQ14N cyberbrain</label>
+		<description>Install a Hanka HCQ14N cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsHCQ14NCyberbrain</ThingDef>
+			<HediffDef>gitsHCQ14NHediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Hanka HCQ14N Cyberbrain.</jobString>
+		<addsHediff>gitsHCQ14NHediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsHCQ14NCyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsHCQ14NCyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Hanka SS9G Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecCombatBase">
+		<defName>gitsSS9GHediff</defName>
+		<label>Hanka SS9G cyberbrain</label>
+		<labelNoun>an installed SS9G cyberbrain</labelNoun>
+		<description>A Hanka SS9G cyberbrain, where the user has had a majority of the brain cyberized and a metal shell installed. This cyberbrain is specialized to enhance a user's shooting abilities in all aspects.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsSS9GCyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsSS9GCyberbrain</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<ShootingAccuracyPawn>6</ShootingAccuracyPawn> <!-- SS9G specific-->
+					<AimingDelayFactor>-0.25</AimingDelayFactor> <!-- SS9G specific-->
+					<RangedCooldownFactor MayRequire="Ludeon.RimWorld.Biotech">-0.25</RangedCooldownFactor> <!-- SS9G specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+					<li>gitsPainReceptorNullify</li>
+					<li>gitsFirstAidDBUplink</li>
+					<li>gitsFCSDBUplink</li>
+        </abilityDefs>
+      </li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsSS9GCyberbrain</defName>
+		<label>Hanka SS9G cyberbrain</label>
+		<description>This specialized Hanka SS9G cyberbrain focuses on enhancing a user's shooting abilities in all aspects.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsSS9GHediff</HediffDef>
+			<RecipeDef>gitsInstallSS9GCyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallSS9GCyberbrain</defName>
+		<label>install Hanka SS9G cyberbrain</label>
+		<description>Install a Hanka SS9G cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsSS9GCyberbrain</ThingDef>
+			<HediffDef>gitsSS9GHediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Hanka SS9G Cyberbrain.</jobString>
+		<addsHediff>gitsSS9GHediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsSS9GCyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsSS9GCyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Hanka SS9M Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecCombatBase">
+		<defName>gitsSS9MHediff</defName>
+		<label>Hanka SS9M cyberbrain</label>
+		<labelNoun>an installed SS9M cyberbrain</labelNoun>
+		<description>A Hanka SS9M cyberbrain, where the user has had a majority of the brain cyberized and a metal shell installed. This cyberbrain is specialized to enhance a user's shooting accuracy, and is best used with long range marksman weapons.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsSS9MCyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsSS9MCyberbrain</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<ShootingAccuracyPawn>3</ShootingAccuracyPawn> <!-- SS9M specific-->
+					<AimingDelayFactor>0.40</AimingDelayFactor> <!-- SS9M specific-->
+					<RangedCooldownFactor MayRequire="Ludeon.RimWorld.Biotech">0.5</RangedCooldownFactor> <!-- SS9M specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+				<statFactors>
+					<ShootingAccuracyFactor_Long>2.5</ShootingAccuracyFactor_Long> <!-- SS9M specific-->
+					<ShootingAccuracyFactor_Medium>1.9</ShootingAccuracyFactor_Medium> <!-- SS9M specific-->
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+					<li>gitsPainReceptorNullify</li>
+					<li>gitsFirstAidDBUplink</li>
+					<li>gitsFCSDBUplink</li>
+        </abilityDefs>
+      </li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsSS9MCyberbrain</defName>
+		<label>Hanka SS9M cyberbrain</label>
+		<description>This specialized Hanka SS9M cyberbrain focuses on enhancing a user's shooting accuracy, and is best used with long range marksman weapons.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsSS9MHediff</HediffDef>
+			<RecipeDef>gitsInstallSS9MCyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallSS9MCyberbrain</defName>
+		<label>install Hanka SS9M cyberbrain</label>
+		<description>Install a Hanka SS9M cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsSS9MCyberbrain</ThingDef>
+			<HediffDef>gitsSS9MHediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Hanka SS9M Cyberbrain.</jobString>
+		<addsHediff>gitsSS9MHediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsSS9MCyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsSS9MCyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- ***Advanced Specialized Cyberbrains***
+Hanka HCQ19 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainAdvCombatBase">
+		<defName>gitsHCQ19Hediff</defName>
+		<label>Hanka HCQ19 cyberbrain</label>
+		<labelNoun>an installed HCQ19 cyberbrain</labelNoun>
+		<description>An advanced Hanka HCQ19 cyberbrain, where the user has had a majority of the brain cyberized and an advanced metal shell installed. This cyberbrain is specialized to enhance a user's melee combat abilities in all aspects.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsHCQ19Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsHCQ19Cyberbrain</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.30</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.15</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<MeleeHitChance>8</MeleeHitChance> <!-- HCQ19 specific-->
+					<MeleeDodgeChance>12</MeleeDodgeChance> <!-- HCQ19 specific-->
+					<GlobalLearningFactor>0.60</GlobalLearningFactor>
+					<ResearchSpeed>0.10</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.20</MeditationFocusGain>
+					<MentalBreakThreshold>0.12</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2.2</CertaintyLossFactor>
+				</statOffsets>
+				<statFactors>
+					<MoveSpeed>1.25</MoveSpeed> <!-- HCQ19 specific-->
+					<MeleeDamageFactor MayRequire="Ludeon.RimWorld.Biotech">1.20</MeleeDamageFactor> <!-- HCQ19 specific-->
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+					<li>gitsPainReceptorNullify</li>
+					<li>gitsFirstAidDBUplink</li>
+					<li>gitsCQBDBUplink</li>
+					<li>gitsOL40SCombatNetwork</li>
+        </abilityDefs>
+      </li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainAdvancedBase">
+		<defName>gitsHCQ19Cyberbrain</defName>
+		<label>Hanka HCQ19 cyberbrain</label>
+		<description>This advanced Hanka HCQ19 cyberbrain focuses on enhancing a user's melee combat abilities in all aspects.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsHCQ19Hediff</HediffDef>
+			<RecipeDef>gitsInstallHCQ19Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallAdvancedCyberbrainBase">
+		<defName>gitsInstallHCQ19Cyberbrain</defName>
+		<label>install Hanka HCQ19 cyberbrain</label>
+		<description>Install a Hanka HCQ19 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsHCQ19Cyberbrain</ThingDef>
+			<HediffDef>gitsHCQ19Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Hanka HCQ19 Cyberbrain.</jobString>
+		<addsHediff>gitsHCQ19Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsHCQ19Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsHCQ19Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Hanka CSOF2 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainAdvCombatBase">
+		<defName>gitsCSOF2Hediff</defName>
+		<label>Hanka CSOF2 cyberbrain</label>
+		<labelNoun>an installed CSOF2 cyberbrain</labelNoun>
+		<description>An advanced Hanka CSOF2 cyberbrain, where the user has had a majority of the brain cyberized and an advanced metal shell installed. This cyberbrain is specialized to enhance a user's shooting abilities in all aspects.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsCSOF2Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsCSOF2Cyberbrain</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.30</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.15</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<ShootingAccuracyPawn>10</ShootingAccuracyPawn> <!-- CSOF2 specific-->
+					<AimingDelayFactor>-0.5</AimingDelayFactor> <!-- CSOF2 specific-->
+					<RangedCooldownFactor MayRequire="Ludeon.RimWorld.Biotech">-0.5</RangedCooldownFactor> <!-- CSOF2 specific-->
+					<GlobalLearningFactor>0.60</GlobalLearningFactor>
+					<ResearchSpeed>0.10</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.20</MeditationFocusGain>
+					<MentalBreakThreshold>0.12</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2.2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+					<li>gitsPainReceptorNullify</li>
+					<li>gitsFirstAidDBUplink</li>
+					<li>gitsFCSDBUplink</li>
+					<li>gitsOL40SCombatNetwork</li>
+        </abilityDefs>
+      </li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainAdvancedBase">
+		<defName>gitsCSOF2Cyberbrain</defName>
+		<label>Hanka CSOF2 cyberbrain</label>
+		<description>This advanced Hanka CSOF2 cyberbrain focuses on enhancing a user's shooting abilities in all aspects.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsCSOF2Hediff</HediffDef>
+			<RecipeDef>gitsInstallCSOF2Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallAdvancedCyberbrainBase">
+		<defName>gitsInstallCSOF2Cyberbrain</defName>
+		<label>install Hanka CSOF2 cyberbrain</label>
+		<description>Install a Hanka CSOF2 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsCSOF2Cyberbrain</ThingDef>
+			<HediffDef>gitsCSOF2Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Hanka CSOF2 Cyberbrain.</jobString>
+		<addsHediff>gitsCSOF2Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsCSOF2Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsCSOF2Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Hanka CSOF4 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainAdvCombatBase">
+		<defName>gitsCSOF4Hediff</defName>
+		<label>Hanka CSOF4 cyberbrain</label>
+		<labelNoun>an installed CSOF4 cyberbrain</labelNoun>
+		<description>An advanced Hanka CSOF4 cyberbrain, where the user has had a majority of the brain cyberized and an advanced metal shell installed. This cyberbrain is specialized to enhance a user's overall combat abilities in melee, ranged, and cyber warfare.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsCSOF4Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsCSOF4Cyberbrain</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.30</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.15</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<ShootingAccuracyPawn>6</ShootingAccuracyPawn> <!-- CSOF4 specific-->
+					<AimingDelayFactor>-0.2</AimingDelayFactor> <!-- CSOF4 specific-->
+					<RangedCooldownFactor MayRequire="Ludeon.RimWorld.Biotech">-0.2</RangedCooldownFactor> <!-- CSOF4 specific-->
+					<MeleeHitChance>4</MeleeHitChance> <!-- CSOF4 specific-->
+					<MeleeDodgeChance>6</MeleeDodgeChance> <!-- CSOF4 specific-->
+					<HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">1</HackingSpeed> <!-- CSOF4 specific-->
+					<GlobalLearningFactor>0.60</GlobalLearningFactor>
+					<ResearchSpeed>0.10</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.20</MeditationFocusGain>
+					<MentalBreakThreshold>0.12</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2.2</CertaintyLossFactor>
+				</statOffsets>
+				<statFactors>
+					<MoveSpeed>1.2</MoveSpeed> <!-- CSOF4 specific-->
+					<MeleeDamageFactor MayRequire="Ludeon.RimWorld.Biotech">1.2</MeleeDamageFactor> <!-- CSOF4 specific-->
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+					<li>gitsPainReceptorNullify</li>
+					<li>gitsFirstAidDBUplink</li>
+					<li>gitsCQBDBUplink</li>
+					<li>gitsFCSDBUplink</li>
+					<li>gitsOL40SCombatNetwork</li>
+        </abilityDefs>
+      </li>
+		</comps>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainAdvancedBase">
+		<defName>gitsCSOF4Cyberbrain</defName>
+		<label>Hanka CSOF4 cyberbrain</label>
+		<description>This advanced Hanka CSOF4 cyberbrain focuses on enhancing a user's overall combat abilities in melee and ranged combat.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsCSOF4Hediff</HediffDef>
+			<RecipeDef>gitsInstallCSOF4Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallAdvancedCyberbrainBase">
+		<defName>gitsInstallCSOF4Cyberbrain</defName>
+		<label>install Hanka CSOF4 cyberbrain</label>
+		<description>Install a Hanka CSOF4 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsCSOF4Cyberbrain</ThingDef>
+			<HediffDef>gitsCSOF4Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Hanka CSOF4 Cyberbrain.</jobString>
+		<addsHediff>gitsCSOF4Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsCSOF4Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsCSOF4Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+</Defs>

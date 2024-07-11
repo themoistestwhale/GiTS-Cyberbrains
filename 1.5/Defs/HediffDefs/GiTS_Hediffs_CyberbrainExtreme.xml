@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Extreme Cyberbrains-->
+<Defs>
+<!-- Poseidon PX7 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainExtremeBase">
+		<defName>gitsPX7Hediff</defName>
+		<label>Poseidon PX-7 cyberbrain</label>
+		<labelNoun>an installed PX-7 cyberbrain</labelNoun>
+		<description>A Poseidon PX-7 cyberbrain, where the user has essentially all of their brain cyberized and an advanced metal shell installed- at great cost. This is the ultimate cyberbrain for enhancing a user's ability to work on just about anything.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsPX7Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsPX7Cyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Construction>2</Construction>
+			<Mining>2</Mining>
+			<Cooking>2</Cooking>
+			<Plants>2</Plants>
+			<Animals>2</Animals>
+			<Crafting>2</Crafting>
+			<Artistic>2</Artistic>
+			<Medicine>2</Medicine>
+			<Social>2</Social>
+			<Intellectual>2</Intellectual>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.50</painFactor>
+				<hungerRateFactorOffset>0.60</hungerRateFactorOffset>
+				<restFallFactorOffset>0.35</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.05</offset>
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Hearing</capacity>
+						<offset>0.15</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.50</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.10</offset>
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Hearing</capacity>
+						<offset>0.25</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>4</socialFightChanceFactor>
+				<statOffsets>
+  				<GeneralLaborSpeed>0.5</GeneralLaborSpeed> <!-- PX7 specific-->
+  				<CleaningSpeed MayRequire="Aelanna.CleaningSpeed">0.5</CleaningSpeed> <!-- PX7 specific-->
+  				<ConstructionSpeed>0.65</ConstructionSpeed> <!-- PX7 specific-->
+  				<MiningSpeed>0.5</MiningSpeed> <!-- PX7 specific-->
+  				<CookSpeed>0.65</CookSpeed> <!-- PX7 specific-->
+  				<SmoothingSpeed>0.9</SmoothingSpeed> <!-- PX7 specific-->
+ 				  <DrugCookingSpeed>0.65</DrugCookingSpeed> <!-- PX7 specific-->
+					<SmeltingSpeed>0.6</SmeltingSpeed> <!-- PX7 specific-->
+  				<ButcheryFleshSpeed>1</ButcheryFleshSpeed> <!-- PX7 specific-->
+  				<ButcheryFleshEfficiency>0.8</ButcheryFleshEfficiency> <!-- PX7 specific-->
+  				<PlantWorkSpeed>0.5</PlantWorkSpeed> <!-- PX7 specific-->
+  				<PlantHarvestYield>0.8</PlantHarvestYield> <!-- PX7 specific-->
+					<DrugHarvestYield>0.8</DrugHarvestYield> <!-- PX7 specific-->
+					<PruningSpeed MayRequire="Ludeon.RimWorld.Ideology">0.5</PruningSpeed> <!-- PX7 specific-->
+  				<FoodPoisonChance>-0.25</FoodPoisonChance> <!-- PX7 specific-->
+					<MedicalTendSpeed>0.2</MedicalTendSpeed> <!-- PX7 specific-->
+					<MedicalOperationSpeed>0.35</MedicalOperationSpeed> <!-- PX7 specific-->
+					<MedicalTendQuality>0.1</MedicalTendQuality> <!-- PX7 specific-->
+					<MedicalSurgerySuccessChance>0.2</MedicalSurgerySuccessChance> <!-- PX7 specific-->
+					<ReadingSpeed>0.35</ReadingSpeed> <!-- PX7 specific-->
+  				<ResearchSpeed>0.5</ResearchSpeed> <!-- PX7 specific-->
+  				<SocialImpact>0.18</SocialImpact> <!-- PX7 specific-->
+  				<NegotiationAbility>0.35</NegotiationAbility> <!-- PX7 specific-->
+ 					<TradePriceImprovement>0.18</TradePriceImprovement> <!-- PX7 specific-->
+					<ArrestSuccessChance>0.1</ArrestSuccessChance> <!-- PX7 specific-->
+					<SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">0.35</SuppressionPower> <!-- PX7 specific-->
+					<ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.2</ConversionPower> <!-- PX7 specific-->
+					<HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">2</HackingSpeed> <!-- PX7 specific-->
+					<GlobalLearningFactor>1.0</GlobalLearningFactor>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.50</MeditationFocusGain>
+					<MentalBreakThreshold>0.20</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">3</CertaintyLossFactor>
+				</statOffsets>
+				<statFactors>
+					<MoveSpeed>1.1</MoveSpeed> <!-- PX7 specific-->
+				</statFactors>
+			</li>
+		</stages>
+		<abilities>
+			<li>gitsMedicalDBUplink</li>
+		</abilities>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainExtremeBase">
+		<defName>gitsPX7Cyberbrain</defName>
+		<label>Poseidon PX-7 cyberbrain</label>
+		<description>This prototype Poseidon PX-7 cyberbrain is an extreme upgrade that enhances a user's ability to work on just about anything.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith less than 5% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to present perversely heightened emotions as their brain is less capable of dampening such, and has begun to show signs of possible psychological disorders.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsPX7Hediff</HediffDef>
+			<RecipeDef>gitsInstallPX7Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallExtremeCyberbrainBase">
+		<defName>gitsInstallPX7Cyberbrain</defName>
+		<label>install Poseidon PX-7 cyberbrain</label>
+		<description>Install a Poseidon PX-7 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsPX7Cyberbrain</ThingDef>
+			<HediffDef>gitsPX7Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Poseidon PX-7 Cyberbrain.</jobString>
+		<addsHediff>gitsPX7Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsPX7Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsPX7Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Locus Solus HADES Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainExtremeBase">
+		<defName>gitsHADESHediff</defName>
+		<label>Locus-Solus HADES cyberbrain</label>
+		<labelNoun>an installed HADES cyberbrain</labelNoun>
+		<description>A Locus-Solus HADES cyberbrain, where the user has essentially all of their brain cyberized and an advanced metal shell installed- at great cost. This is the ultimate cyberbrain for enhancing a user's combat abilities.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsHADESCyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsHADESCyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Shooting>3</Shooting>
+			<Melee>3</Melee>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.50</painFactor>
+				<hungerRateFactorOffset>0.60</hungerRateFactorOffset>
+				<restFallFactorOffset>0.35</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.14</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.05</offset>
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Hearing</capacity>
+						<offset>0.15</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.50</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.10</offset>
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Hearing</capacity>
+						<offset>0.25</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>4</socialFightChanceFactor>
+				<statOffsets>
+					<ShootingAccuracyPawn>12</ShootingAccuracyPawn> <!-- HADES specific-->
+					<AimingDelayFactor>-0.65</AimingDelayFactor> <!-- HADES specific-->
+					<RangedCooldownFactor>-0.65</RangedCooldownFactor> <!-- HADES specific-->
+					<MeleeHitChance>12</MeleeHitChance> <!-- HADES specific-->
+					<MeleeDodgeChance>18</MeleeDodgeChance> <!-- HADES specific-->
+					<HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">1.2</HackingSpeed> <!-- HADES specific-->
+					<GlobalLearningFactor>1.0</GlobalLearningFactor>
+					<ResearchSpeed>0.20</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.50</MeditationFocusGain>
+					<MentalBreakThreshold>0.20</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">3</CertaintyLossFactor>
+				</statOffsets>
+				<statFactors>
+					<MoveSpeed>1.5</MoveSpeed> <!-- HADES specific-->
+					<MeleeCooldownFactor>0.75</MeleeCooldownFactor> <!-- HADES specific-->
+					<MeleeDamageFactor>1.35</MeleeDamageFactor> <!-- HADES specific-->
+				</statFactors>
+			</li>
+		</stages>
+		<abilities>
+			<li>gitsFirstAidDBUplink</li>
+			<li>gitsCQBDBUplink</li>
+			<li>gitsFCSDBUplink</li>
+			<li>gitsOL40SCombatNetwork</li>
+		</abilities>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainExtremeBase">
+		<defName>gitsHADESCyberbrain</defName>
+		<label>Locus-Solus HADES cyberbrain</label>
+		<description>This Locus-Solus HADES cyberbrain is an extreme upgrade that can be considered to be the ultimate cyberbrain for enhancing a user's combat abilities.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith less than 5% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to present perversely heightened emotions as their brain is less capable of dampening such, and has begun to show signs of possible psychological disorders.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsHADESHediff</HediffDef>
+			<RecipeDef>gitsInstallHADESCyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallExtremeCyberbrainBase">
+		<defName>gitsInstallHADESCyberbrain</defName>
+		<label>install Locus-Solus HADES cyberbrain</label>
+		<description>Install a Locus-Solus HADES cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsHADESCyberbrain</ThingDef>
+			<HediffDef>gitsHADESHediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Locus-Solus HADES Cyberbrain.</jobString>
+		<addsHediff>gitsHADESHediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsHADESCyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsHADESCyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+</Defs>

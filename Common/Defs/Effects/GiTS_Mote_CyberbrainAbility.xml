@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Cyberbrain Ability Motes-->
+<Defs>
+<!-- OL40S Combat Network Cyberbrain Ability Mote-->
+  <ThingDef ParentName="MoteBase">
+    <defName>gitsMoteOL40SLink</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <fadeOutTime>0.1</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+    </mote>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+      <texPath>GiTSCyberbrains/UI/gitsMoteOL40SLink</texPath>
+    </graphicData>
+  </ThingDef>
+</Defs>

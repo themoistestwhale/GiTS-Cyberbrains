@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Cyberbrains
+RBSE Patches-->
+<Patch>
+<!-- *** Cyberbrain Base Patches ***
+gitsBodyPartCyberbrainBase add recipeUser AdvancedMedicalStation-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="gitsBodyPartCyberbrainBase"]/recipeMaker/recipeUsers</xpath>
+		<value>
+			<li>AdvancedMedicalStation</li>
+		</value>
+	</Operation>
+
+<!-- *** ResearchProjectDef Patches ***
+add Neuroscience prerequisite to gitsResearchBrainCyberization-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ResearchProjectDef[defName="gitsResearchBrainCyberization"]/prerequisites</xpath>
+		<value>
+			<li>Neuroscience</li>
+		</value>
+	</Operation>
+</Patch>

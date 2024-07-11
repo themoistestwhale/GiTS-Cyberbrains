@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- GiTS Micromachine Surgeries-->
+<Defs>
+<!-- *** Immunity nanites ***-->
+	<HediffDef ParentName="gitsImmunityNanitesBase">
+		<defName>gitsImmunityNanitesHediff</defName>
+		<label>micromachine immunity treatment</label>
+    <description>Boosted immunity through the use of a targeted micromachine treatment, increasing blood filtration and providing a slight reduction to felt pain. Effective for two days.</description>
+		<descriptionHyperlinks>
+      <ThingDef>gitsMicromachines</ThingDef>
+			<RecipeDef>gitsInstallImmunityNanites</RecipeDef>
+    </descriptionHyperlinks>
+		<initialSeverity>1.0</initialSeverity>	
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>immunity nanites</label>
+				<minSeverity>0.01</minSeverity>
+        <painFactor>0.85</painFactor>
+				<capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.42</offset>
+          </li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<RecipeDef ParentName="gitsSurgeryImmunityNanitesBase">
+		<defName>gitsInstallImmunityNanites</defName>
+		<label>Administer immunity nanites</label>
+		<description>Administer targeted micromachines programmed to boost the immunity system as well as provide slight relief to felt pain. Lasts for two days. Does not require anethesia to conduct.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsMicromachines</ThingDef>
+			<HediffDef>gitsImmunityNanitesHediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Administering immunity nanites.</jobString>
+		<addsHediff>gitsImmunityNanitesHediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsMicromachines</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsMicromachines</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- *** Food poisoning surgery ***-->
+	<RecipeDef ParentName="gitsSurgeryRemoveFoodPoisoningBase">
+		<defName>gitsSurgeryRemoveFoodPoisoning</defName>
+		<label>cure food poisoning</label>
+		<description>Administer targeted micromachines programmed to fight food poisoning, attacking the problem bacteria or virus causing the case while also mitigating symptoms. Does not require anethesia to conduct.</description>
+		<descriptionHyperlinks>
+			<HediffDef>FoodPoisoning</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Curing food poisoning.</jobString>
+		<successfullyRemovedHediffMessage>{0} has successfully cured {1}'s food poisoning.</successfullyRemovedHediffMessage>
+		<surgerySuccessChanceFactor>0.90</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.01</deathOnFailedSurgeryChance>
+		<removesHediff>FoodPoisoning</removesHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsMicromachines</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsMicromachines</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- *** Toxin buildup surgery ***-->
+	<RecipeDef ParentName="gitsSurgeryRemoveToxinBuildupBase">
+		<defName>gitsSurgeryRemoveToxinBuildup</defName>
+		<label>cure toxin buildup</label>
+		<description>Administer targeted micromachines programmed to fight toxin buildup, targeting toxins in the body while also mitigating symptoms.</description>
+		<descriptionHyperlinks>
+			<HediffDef>ToxicBuildup</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Curing toxin buildup.</jobString>
+		<successfullyRemovedHediffMessage>{0} has successfully cured {1}'s toxin buildup.</successfullyRemovedHediffMessage>
+		<surgerySuccessChanceFactor>0.85</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.04</deathOnFailedSurgeryChance>
+		<removesHediff>ToxicBuildup</removesHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsMicromachines</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsMicromachines</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- *** Organ decay surgery ***-->
+	<RecipeDef ParentName="gitsSurgeryRemoveOrganDecayBase">
+		<defName>gitsSurgeryRemoveOrganDecay</defName>
+		<label>cure organ decay</label>
+		<description>An expensive and diffcult procedure, micromachines are programmed to combat organ decay disease while also repairing already caused damage.</description>
+		<descriptionHyperlinks>
+			<HediffDef>OrganDecay</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Curing organ decay.</jobString>
+		<successfullyRemovedHediffMessage>{0} has successfully cured {1}'s organ decay.</successfullyRemovedHediffMessage>
+		<surgerySuccessChanceFactor>0.72</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.06</deathOnFailedSurgeryChance>
+		<removesHediff>OrganDecay</removesHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>4</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsMicromachines</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+			<thingDefs>
+				<li>gitsMicromachines</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Heart</li>
+			<li>Lung</li>
+			<li>Kidney</li>
+		</appliedOnFixedBodyParts>
+	</RecipeDef>
+</Defs>

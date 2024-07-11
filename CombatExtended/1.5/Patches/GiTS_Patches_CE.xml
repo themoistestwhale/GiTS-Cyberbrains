@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- GiTS Cyberbrains
+Combat Extended Patches-->
+<Patch>
+<!-- *** Ability Patches ***
+CQB DB Uplink-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsCQBDBUplinkHediff"]/stages/li/statOffsets</xpath>
+    <value>
+			<statOffsets>
+				<MeleeHitChance>3</MeleeHitChance>
+				<MeleeCritChance>0.18</MeleeCritChance>
+				<MeleeParryChance>0.25</MeleeParryChance>
+				<MeleeDodgeChance>0.25</MeleeDodgeChance>
+				<Suppressability>-0.25</Suppressability>
+			</statOffsets>
+    </value>
+  </Operation>
+
+<!-- FCS DB Uplink-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsFCSDBUplinkHediff"]/stages/li/statOffsets</xpath>
+    <value>
+			<statOffsets>
+        <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+				<AimingAccuracy>0.5</AimingAccuracy>
+        <AimingDelayFactor>-0.2</AimingDelayFactor>
+				<ReloadSpeed>0.12</ReloadSpeed>
+			</statOffsets>
+    </value>
+  </Operation>
+
+<!-- OL40S Combat Network-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsOL40SCombatNetworkHediffBuff"]/stages/li/statOffsets</xpath>
+    <value>
+			<statOffsets>
+        <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+				<AimingAccuracy>0.10</AimingAccuracy>
+        <AimingDelayFactor>-0.085</AimingDelayFactor>
+				<ReloadSpeed>0.05</ReloadSpeed>
+				<MeleeHitChance>2</MeleeHitChance>
+				<MeleeCritChance>0.12</MeleeCritChance>
+				<MeleeParryChance>0.15</MeleeParryChance>
+				<MeleeDodgeChance>0.15</MeleeDodgeChance>
+				<Suppressability>-0.15</Suppressability>
+        <MoveSpeed>0.10</MoveSpeed>
+			</statOffsets>
+    </value>
+  </Operation>
+
+<!-- *** Specialized Cyberbrain Patches ***
+Hanka HCQ11-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsHCQ11Hediff"]/stages/li/statOffsets</xpath>
+    <value>
+			<statOffsets>
+				<MeleeHitChance>6</MeleeHitChance> <!-- HCQ11 specific-->
+				<MeleeCritChance>0.50</MeleeCritChance> <!-- HCQ11 specific-->
+				<MeleeParryChance>0.50</MeleeParryChance> <!-- HCQ11 specific-->
+				<MeleeDodgeChance>0.35</MeleeDodgeChance> <!-- HCQ11 specific-->
+				<Suppressability>-1.0</Suppressability> <!-- HCQ11 specific-->
+				<GlobalLearningFactor>0.50</GlobalLearningFactor>
+				<ResearchSpeed>0.05</ResearchSpeed>
+				<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+				<MentalBreakThreshold>0.10</MentalBreakThreshold>
+				<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+			</statOffsets>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsHCQ11Hediff"]/stages/li/statFactors</xpath>
+    <value>
+			<statFactors>
+				<MoveSpeed>1.12</MoveSpeed> <!-- HCQ11 specific-->
+				<MeleeCooldownFactor>0.75</MeleeCooldownFactor> <!-- HCQ11 specific-->
+				<MeleeDamageFactor>1.1</MeleeDamageFactor> <!-- HCQ11 specific-->
+			</statFactors>
+    </value>
+  </Operation>
+
+<!-- Hanka HCQ14T-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsHCQ14THediff"]/stages/li/statOffsets</xpath>
+    <value>
+			<statOffsets>
+				<MeleeHitChance>8</MeleeHitChance> <!-- HCQ14T specific-->
+				<MeleeCritChance>0.65</MeleeCritChance> <!-- HCQ14T specific-->
+				<MeleeParryChance>0.30</MeleeParryChance> <!-- HCQ14T specific-->
+				<MeleeDodgeChance>0.20</MeleeDodgeChance> <!-- HCQ14T specific-->
+				<Suppressability>-1.0</Suppressability> <!-- HCQ14T specific-->
+				<GlobalLearningFactor>0.50</GlobalLearningFactor>
+				<ResearchSpeed>0.05</ResearchSpeed>
+				<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+				<MentalBreakThreshold>0.10</MentalBreakThreshold>
+				<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+			</statOffsets>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsHCQ14THediff"]/stages/li/statFactors</xpath>
+    <value>
+			<statFactors>
+				<MeleeCooldownFactor>1.5</MeleeCooldownFactor> <!-- HCQ14T specific-->
+				<MeleeWeapon_DamageMultiplier>2</MeleeWeapon_DamageMultiplier> <!-- HCQ14T specific-->
+			</statFactors>
+    </value>
+  </Operation>
+
+<!-- Hanka HCQ14N-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsHCQ14NHediff"]/stages/li/statOffsets</xpath>
+    <value>
+			<statOffsets>
+				<MeleeHitChance>4</MeleeHitChance> <!-- HCQ14T specific-->
+				<MeleeCritChance>0.50</MeleeCritChance> <!-- HCQ14T specific-->
+				<MeleeParryChance>0.65</MeleeParryChance> <!-- HCQ14T specific-->
+				<MeleeDodgeChance>0.50</MeleeDodgeChance> <!-- HCQ14T specific-->
+				<Suppressability>-1.0</Suppressability> <!-- HCQ14T specific-->
+				<GlobalLearningFactor>0.50</GlobalLearningFactor>
+				<ResearchSpeed>0.05</ResearchSpeed>
+				<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+				<MentalBreakThreshold>0.10</MentalBreakThreshold>
+				<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+			</statOffsets>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsHCQ14NHediff"]/stages/li/statFactors</xpath>
+    <value>
+			<statFactors>
+				<MoveSpeed>1.25</MoveSpeed> <!-- HCQ14N specific-->
+				<MeleeCooldownFactor>0.5</MeleeCooldownFactor> <!-- HCQ14N specific-->
+				<MeleeDamageFactor>0.80</MeleeDamageFactor> <!-- HCQ14N specific-->
+			</statFactors>
+    </value>
+  </Operation>
+
+<!-- Hanka SS9G-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsSS9GHediff"]/stages/li/statOffsets</xpath>
+    <value>
+			<statOffsets>
+				<ShootingAccuracyPawn>4</ShootingAccuracyPawn> <!-- SS9G specific-->
+				<AimingAccuracy>0.5</AimingAccuracy> <!-- SS9G specific-->
+				<AimingDelayFactor>-0.25</AimingDelayFactor> <!-- SS9G specific-->
+				<GlobalLearningFactor>0.50</GlobalLearningFactor>
+				<ResearchSpeed>0.05</ResearchSpeed>
+				<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+				<MentalBreakThreshold>0.10</MentalBreakThreshold>
+				<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+			</statOffsets>
+    </value>
+  </Operation>
+
+<!-- Hanka SS9M-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsSS9MHediff"]/stages/li/statOffsets</xpath>
+    <value>
+			<statOffsets>
+				<ShootingAccuracyPawn>8</ShootingAccuracyPawn> <!-- SS9M specific-->
+				<AimingAccuracy>1.5</AimingAccuracy> <!-- SS9M specific-->
+				<AimingDelayFactor>0.35</AimingDelayFactor> <!-- SS9M specific-->
+				<GlobalLearningFactor>0.50</GlobalLearningFactor>
+				<ResearchSpeed>0.05</ResearchSpeed>
+				<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+				<MentalBreakThreshold>0.10</MentalBreakThreshold>
+				<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+			</statOffsets>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/HediffDef[defName="gitsSS9MHediff"]/stages/li/statFactors</xpath>
+  </Operation>
+
+<!-- *** Advanced Specialized Cyberbrain Patches ***
+Hanka HCQ19-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsHCQ19Hediff"]/stages/li/statOffsets</xpath>
+    <value>
+			<statOffsets>
+				<MeleeHitChance>8</MeleeHitChance> <!-- HCQ19 specific-->
+				<MeleeCritChance>0.50</MeleeCritChance> <!-- HCQ19 specific-->
+				<MeleeParryChance>0.50</MeleeParryChance> <!-- HCQ19 specific-->
+				<MeleeDodgeChance>0.50</MeleeDodgeChance> <!-- HCQ19 specific-->
+				<Suppressability>-1.0</Suppressability> <!-- HCQ19 specific-->
+				<GlobalLearningFactor>0.60</GlobalLearningFactor>
+				<ResearchSpeed>0.10</ResearchSpeed>
+				<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.20</MeditationFocusGain>
+				<MentalBreakThreshold>0.12</MentalBreakThreshold>
+				<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2.2</CertaintyLossFactor>
+			</statOffsets>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsHCQ19Hediff"]/stages/li/statFactors</xpath>
+    <value>
+			<statFactors>
+				<MoveSpeed>1.25</MoveSpeed> <!-- HCQ19 specific-->
+				<MeleeCooldownFactor>0.85</MeleeCooldownFactor> <!-- HCQ19 specific-->
+				<MeleeDamageFactor>1.30</MeleeDamageFactor> <!-- HCQ19 specific-->
+			</statFactors>
+    </value>
+  </Operation>
+
+<!-- Hanka CSOF2-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsCSOF2Hediff"]/stages/li/statOffsets</xpath>
+    <value>
+			<statOffsets>
+				<ShootingAccuracyPawn>8</ShootingAccuracyPawn> <!-- CSOF2 specific-->
+				<AimingAccuracy>0.80</AimingAccuracy> <!-- CSOF2 specific-->
+				<AimingDelayFactor>-0.5</AimingDelayFactor> <!-- CSOF2 specific-->
+				<GlobalLearningFactor>0.60</GlobalLearningFactor>
+				<ResearchSpeed>0.10</ResearchSpeed>
+				<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.20</MeditationFocusGain>
+				<MentalBreakThreshold>0.12</MentalBreakThreshold>
+				<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2.2</CertaintyLossFactor>
+			</statOffsets>
+    </value>
+  </Operation>
+
+<!-- Hanka CSOF4-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsCSOF4Hediff"]/stages/li/statOffsets</xpath>
+    <value>
+			<statOffsets>
+				<ShootingAccuracyPawn>6</ShootingAccuracyPawn> <!-- CSOF4 specific-->
+				<AimingAccuracy>0.35</AimingAccuracy> <!-- CSOF4 specific-->
+				<AimingDelayFactor>-0.2</AimingDelayFactor> <!-- CSOF4 specific-->
+				<MeleeHitChance>4</MeleeHitChance> <!-- CSOF4 specific-->
+				<MeleeCritChance>0.35</MeleeCritChance> <!-- CSOF4 specific-->
+				<MeleeParryChance>0.35</MeleeParryChance> <!-- CSOF4 specific-->
+				<MeleeDodgeChance>0.30</MeleeDodgeChance> <!-- CSOF4 specific-->
+				<Suppressability>-1.0</Suppressability> <!-- CSOF4 specific-->
+				<HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">1</HackingSpeed> <!-- CSOF4 specific-->
+				<GlobalLearningFactor>0.60</GlobalLearningFactor>
+				<ResearchSpeed>0.10</ResearchSpeed>
+				<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.20</MeditationFocusGain>
+				<MentalBreakThreshold>0.12</MentalBreakThreshold>
+				<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2.2</CertaintyLossFactor>
+			</statOffsets>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsCSOF4Hediff"]/stages/li/statFactors</xpath>
+    <value>
+			<statFactors>
+				<MoveSpeed>1.2</MoveSpeed> <!-- CSOF4 specific-->
+				<MeleeCooldownFactor>0.65</MeleeCooldownFactor> <!-- CSOF4 specific-->
+				<MeleeDamageFactor>1.25</MeleeDamageFactor> <!-- CSOF4 specific-->
+			</statFactors>
+    </value>
+  </Operation>
+
+<!-- *** Extreme Cyberbrain Patches ***
+Locus Solus HADES-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsHADESHediff"]/stages/li/statOffsets</xpath>
+    <value>
+			<statOffsets>
+				<ShootingAccuracyPawn>12</ShootingAccuracyPawn> <!-- HADES specific-->
+				<AimingAccuracy>0.60</AimingAccuracy> <!-- HADES specific-->
+				<AimingDelayFactor>-0.65</AimingDelayFactor> <!-- HADES specific-->
+				<MeleeHitChance>12</MeleeHitChance> <!-- HADES specific-->
+				<MeleeCritChance>0.80</MeleeCritChance> <!-- HADES specific-->
+				<MeleeParryChance>0.80</MeleeParryChance> <!-- HADES specific-->
+				<MeleeDodgeChance>0.92</MeleeDodgeChance> <!-- HADES specific-->
+				<Suppressability>-1.0</Suppressability> <!-- HADES specific-->
+				<HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">1.2</HackingSpeed> <!-- HADES specific-->
+				<GlobalLearningFactor>1.0</GlobalLearningFactor>
+				<ResearchSpeed>0.20</ResearchSpeed>
+				<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.50</MeditationFocusGain>
+				<MentalBreakThreshold>0.20</MentalBreakThreshold>
+				<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">3</CertaintyLossFactor>
+			</statOffsets>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/HediffDef[defName="gitsHADESHediff"]/stages/li/statFactors</xpath>
+    <value>
+			<statFactors>
+				<MoveSpeed>1.5</MoveSpeed> <!-- HADES specific-->
+				<MeleeCooldownFactor>0.85</MeleeCooldownFactor> <!-- HADES specific-->
+				<MeleeDamageFactor>1.40</MeleeDamageFactor> <!-- HADES specific-->
+			</statFactors>
+    </value>
+  </Operation>
+</Patch>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Research Tab-->
+<Defs>
+	<ResearchTabDef>
+		<defName>gitsResearch</defName>
+		<label>GiTS</label>
+	</ResearchTabDef>
+</Defs>

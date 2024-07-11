@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- GiTS ThingDefs
+Resources-->
+<Defs>
+<!-- Micromachines-->
+	<ThingDef ParentName="ResourceBase">
+		<defName>gitsMicromachines</defName>
+		<label>micromachines</label>
+		<description>Stored in a sealed metal canister, these micromachines are designed for use within the human body and are capable of grafting circuitry into organic tissue. They can be programmed for a multitude of uses, but are most commonly used for human cybernetics.\n\nThese microscopic machines are one millionth of a millimeter in size and can root themselves into human tissue. Upon death, they cannot be removed and even further implementation of micromachines cannot remove dead ones. Thankfully, this is not considered a large problem due to their size.</description>
+		<descriptionHyperlinks>
+			<RecipeDef>gitsMakeMicromachines</RecipeDef>
+			<RecipeDef>gitsInstallImmunityNanites</RecipeDef>
+			<RecipeDef>gitsSurgeryRemoveFoodPoisoning</RecipeDef>
+			<RecipeDef>gitsSurgeryRemoveToxinBuildup</RecipeDef>
+		</descriptionHyperlinks>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+		<techLevel>Spacer</techLevel>
+		<graphicData>
+			<texPath>GiTSCyberbrains/Things/Resources/gitsMicromachines</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<stackLimit>50</stackLimit>
+    <intricate>true</intricate>
+		<healthAffectsPrice>false</healthAffectsPrice>
+    <allowedArchonexusCount MayRequire="Ludeon.RimWorld.Ideology">8</allowedArchonexusCount>
+    <statBases>
+      <Mass>0.6</Mass>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>800</MarketValue>
+      <Flammability>0.2</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+	</ThingDef>
+</Defs>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Cyberization Drawback Diseases-->
+<Defs>
+<!-- Cyberbrain sclerosis-->
+  <HediffDef ParentName="gitsCyberbrainDiseaseBase">
+    <defName>gitsCyberbrainSclerosis</defName>
+    <label>cyberbrain sclerosis</label>
+    <description>An exceptionally rare disease, cyberbrain sclerosis results in the progressive hardening of tissue in the brain and is always fatal. Anyone who undergoes cyberization is at risk, albeit extremely low.\n\nSymptoms will initially present themselves as slight memory loss before worsening at an alarming rate. Additionally, victims of cyberbrain sclerosis will see a loss in speaking ability as well as manipulation over time. It usually takes 30 days to cause absolute brain death.\n\nThere is currently no cure for cyberbrain sclerosis as micromachines are incapable of combating it. It is rumored long ago in the 21st Century one was found, but was abandoned for unknown reasons. It can only be speculated now as to why.</description>
+    <lethalSeverity>1.0</lethalSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Immunizable">
+        <severityPerDayNotImmune>0.033</severityPerDayNotImmune> <!-- 30 days to full severity-->
+      </li>
+      <li Class="HediffCompProperties_SkillDecay">
+        <decayPerDayPercentageLevelCurve>
+          <points>
+            <li>(8, 0.05)</li> <!-- 8 days, 5% skill decay-->
+            <li>(20, 0.20)</li> <!-- 20 days, 20% skill decay-->
+            <li>(40, 0.40)</li> <!-- 40 days, 40% skill decay-->
+          </points>
+        </decayPerDayPercentageLevelCurve>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>minor</label>
+        <partEfficiencyOffset>-0.05</partEfficiencyOffset>
+        <forgetMemoryThoughtMtbDays>30</forgetMemoryThoughtMtbDays>
+        <capMods>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-0.12</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>WanderConfused</mentalState>
+            <mtbDays>20</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+      <li>
+        <label>minor</label>
+        <minSeverity>0.2</minSeverity>
+        <partEfficiencyOffset>-0.15</partEfficiencyOffset>
+        <forgetMemoryThoughtMtbDays>12</forgetMemoryThoughtMtbDays>
+        <capMods>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-0.25</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>WanderConfused</mentalState>
+            <mtbDays>16</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+      <li>
+        <label>major</label>
+        <minSeverity>0.5</minSeverity>
+        <partEfficiencyOffset>-0.25</partEfficiencyOffset>
+        <forgetMemoryThoughtMtbDays>4</forgetMemoryThoughtMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.15</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-0.50</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.50</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>WanderConfused</mentalState>
+            <mtbDays>12</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+      <li>
+        <label>major</label>
+        <minSeverity>0.8</minSeverity>
+        <partEfficiencyOffset>-0.35</partEfficiencyOffset>
+        <forgetMemoryThoughtMtbDays>2</forgetMemoryThoughtMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.10</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.30</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <setMax>0</setMax>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.50</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>WanderConfused</mentalState>
+            <mtbDays>4</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+<!-- Closed shell syndrome-->
+  <HediffDef ParentName="gitsCyberbrainDiseaseBase">
+    <defName>gitsClosedShellSyndrome</defName>
+    <label>Closed shell syndrome</label>
+    <description>A form of cyberbrain-induced autism where the user is too compatible with cyberbrain techology, and the subject shuts themselves off from the world. It is subject to debate as to why this occurs, but it is most often agreed upon that this is to prevent themselves from harming others or themselves.\n\nUnfortunately there is no known treatment for CSS, but at the same time it is not fatal either. There is always space for those afflicted by CSS in society, as those afflicted tend to become savants with extremely strong computing skills and manipulation abilities.</description>
+    <stages>
+      <li>
+        <opinionOfOthersFactor>0</opinionOfOthersFactor>
+				<statOffsets>
+					<GlobalLearningFactor>0.65</GlobalLearningFactor>
+  				<ResearchSpeed>0.80</ResearchSpeed>
+					<HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">2.5</HackingSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">1.5</MeditationFocusGain>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">3.5</CertaintyLossFactor>
+				</statOffsets>
+        <capMods>
+          <li>
+            <capacity>Talking</capacity>
+            <setMax>0</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.08</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

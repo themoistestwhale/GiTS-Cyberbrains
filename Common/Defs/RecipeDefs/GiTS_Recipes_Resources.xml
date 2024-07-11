@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- GiTS RecipeDefs
+Resources-->
+<Defs>
+<!-- *** Micromachines ***
+Micromachines Base Recipe-->
+  <RecipeDef Name="gitsMakeMicromachinesBase" Abstract="True">
+    <researchPrerequisite>gitsResearchMicromachines</researchPrerequisite>
+    <skillRequirements>
+      <Crafting>8</Crafting>
+    </skillRequirements>
+		<recipeUsers>
+			<li>FabricationBench</li>
+		</recipeUsers>
+    <workSkill>Crafting</workSkill>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+  </RecipeDef>
+
+<!-- Micromachines Recipe 1x-->
+  <RecipeDef ParentName="gitsMakeMicromachinesBase">
+    <defName>gitsMakeMicromachines</defName>
+    <label>make micromachines</label>
+    <description>Make micromachines.</description>
+    <jobString>Making micromachines.</jobString>
+    <displayPriority>16</displayPriority>
+    <workAmount>4000</workAmount>
+    <products>
+      <gitsMicromachines>1</gitsMicromachines>
+    </products>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>12</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ComponentSpacer</li>
+        <li>Steel</li>
+        <li>Plasteel</li>
+        <li>Gold</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+<!-- Bulk Micromachines Recipe x5-->
+  <RecipeDef ParentName="gitsMakeMicromachinesBase">
+    <defName>gitsMakeMicromachinesBulk</defName>
+    <label>make micromachines (x5)</label>
+    <description>Make micromachines x5.</description>
+    <jobString>Making micromachines x5.</jobString>
+    <displayPriority>17</displayPriority>
+    <workAmount>20000</workAmount>
+    <products>
+      <gitsMicromachines>5</gitsMicromachines>
+    </products>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ComponentSpacer</li>
+        <li>Steel</li>
+        <li>Plasteel</li>
+        <li>Gold</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+</Defs>

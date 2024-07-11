@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Cyberbrains HugsLib Update News-->
+<Defs>
+	<HugsLib.UpdateFeatureDef Name="gitsCyberbrainsHLModUpdatesBase" Abstract="True">
+		<modNameReadable>GiTS Cyberbrains</modNameReadable>
+		<modIdentifier>GiTS_Cyberbrains_HL</modIdentifier>
+		<linkUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3272114598</linkUrl>
+	</HugsLib.UpdateFeatureDef>
+
+	<HugsLib.UpdateFeatureDef ParentName="gitsCyberbrainsHLModUpdatesBase">
+		<defName>GiTSCyberbrains_HL_1_0_3</defName>
+		<assemblyVersion>1.0.3</assemblyVersion>
+		<content>Another small patch based on user feedback rebalancing research progression and adding learning helper tutorials. Additionally, a non-steam download link also now exists on GitHub.
+
+|Patch Notes:
+* Added learning helper tutorials based on feedback. These skip lore unlike other descriptions and primary focus on usage in a simplified format.
+* Updated melee damage factor values in CE patches.
+* Updated Manifest.xml load rules for legacy users.
+* Updated README.txt to include licenses.
+* Lowered research project cost of central nervous cyberization, cyberbrain interfaces and the net by 200 each.
+* Extreme cyberization research project cost raised.
+* Closed Shell Syndrome rebalanced, focusing less on manipulation and more on learning/hacking ability.
+* Fixed Cyberbrain Sclerosis sometimes not progressing if certain disease overhaul mods are also loaded.
+* Fixed incorrect description of Cyberbrain Sclerosis.</content>
+	</HugsLib.UpdateFeatureDef>
+
+	<HugsLib.UpdateFeatureDef ParentName="gitsCyberbrainsHLModUpdatesBase">
+		<defName>GiTSCyberbrains_HL_1_0_2</defName>
+		<assemblyVersion>1.0.2</assemblyVersion>
+		<content>Small patch that finally backports cyberbrain abilities to 1.4 and adds graphic variations to cyberbrains as items! Minor balance tweaks and EPOE-Forked patch changes also made.
+
+|Patch Notes:
+* All cyberbrain abilities have been backported to 1.4 with Combat Extended support!
+* New graphic variations of the cyberbrain exist for the basic, enhanced, specialized and extreme variants to make them visually distinguishable as items.
+* Adjusted effects of OS40L Combat Network.
+* Updated loading screen tips, added another five new loading screen tips.
+* Texture path changes, please check this if you have written a texture patch for this mod!
+* Pain Dampen and Pain Nullify cyberbrain ability toggles now only have a 1 second delay (previously 80 seconds).
+* Pain Dampen ability now sets pain factor to 25% (was 20%).
+* Basic cyberbrain now has access to Pain Dampen ability.
+* Extreme cyberization now requires 3 days to adapt (previously 2).
+* Cyberbrain Sclerosis now takes 30 days to reach full severity (previously 60 days).
+* Minor fix to extreme cyberbrain adaptation phase stat changes.
+* EPOE-Forked patch now adds brain surgery research requirement for the cyberbrain installation surgery itself.
+* EPOE-Forked patch will now use MA-AI chips in all cyberbrain recipes.
+* EPOE-Forked patch to replace cyberbrain graphics has been removed due to addition of new cyberbrain graphics. If it is requested back, I will readd it.</content>
+	</HugsLib.UpdateFeatureDef>
+
+	<HugsLib.UpdateFeatureDef ParentName="gitsCyberbrainsHLModUpdatesBase">
+		<defName>GiTSCyberbrains_HL_1_0_1</defName>
+		<assemblyVersion>1.0.1</assemblyVersion>
+		<content>Hotfix for incorrect values in some cyberbrains.
+
+|Patch Notes:
+* Fixed some incorrect statFactors values in some Hediffs.
+* Fixed some incorrect statFactors values in Combat Extended patches.
+* Minor changes to About.xml file content.</content>
+	</HugsLib.UpdateFeatureDef>
+</Defs>

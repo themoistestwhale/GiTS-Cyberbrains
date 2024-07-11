@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Cyberbrains
+Bionic Icons Texture Defs-->
+<Defs>
+<!-- all mod textures replaced with BionicAdvanced box-->
+  <BionicIconsTextureDef>
+    <defName>GiTSCyberbrains</defName>
+    <texture>GiTSCyberbrains/gitsCyberbrain</texture>
+    <replacement>BionicIcons/Boxes/BionicAdvanced</replacement>
+  </BionicIconsTextureDef>
+</Defs>

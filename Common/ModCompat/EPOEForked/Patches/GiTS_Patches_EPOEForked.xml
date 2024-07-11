@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Cyberbrains
+EPOE Forked Patches-->
+<Patch>
+<!-- *** Cyberbrain Base Patches ***
+gitsBodyPartCyberbrainBase add recipeUser TableOrgans-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="gitsBodyPartCyberbrainBase"]/recipeMaker/recipeUsers</xpath>
+		<value>
+			<li>TableOrgans</li>
+		</value>
+	</Operation>
+<!-- add BrainSurgery prerequisite to gitsSurgeryInstallCyberbrainBase-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[@Name="gitsSurgeryInstallCyberbrainBase"]</xpath>
+		<value>
+		  <researchPrerequisite>BrainSurgery</researchPrerequisite>
+		</value>
+	</Operation>
+
+<!-- costList adjustments for EPOE MAAI chips-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="gitsBodyPartCyberbrainBasicBase"]/costList/ComponentSpacer</xpath>
+    <value>
+			<EPOE_MAAI_Chip>3</EPOE_MAAI_Chip>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="gitsBodyPartCyberbrainEnhancedBase"]/costList/ComponentSpacer</xpath>
+    <value>
+			<EPOE_MAAI_Chip>5</EPOE_MAAI_Chip>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="gitsBodyPartCyberbrainSpecializedBase"]/costList/ComponentSpacer</xpath>
+    <value>
+			<EPOE_MAAI_Chip>5</EPOE_MAAI_Chip>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="gitsBodyPartCyberbrainAdvancedBase"]/costList/ComponentSpacer</xpath>
+    <value>
+			<EPOE_MAAI_Chip>6</EPOE_MAAI_Chip>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="gitsBodyPartCyberbrainExtremeBase"]/costList/ComponentSpacer</xpath>
+    <value>
+			<EPOE_MAAI_Chip>8</EPOE_MAAI_Chip>
+    </value>
+  </Operation>
+
+<!-- *** ResearchProjectDef Patches ***
+add BrainSurgery prerequisite to gitsResearchBrainCyberization-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ResearchProjectDef[defName="gitsResearchBrainCyberization"]/prerequisites</xpath>
+		<value>
+			<li>BrainSurgery</li>
+		</value>
+	</Operation>
+</Patch>

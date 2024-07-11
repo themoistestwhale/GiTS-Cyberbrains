@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Cyberbrains TipSetDefs-->
+<Defs>
+  <TipSetDef>
+	  <defName>gitsCyberbrainsTips</defName>
+	  <tips>
+<!-- General tips-->
+			<li TKey="gitsImmunityNanitesTip">Micromachines can be used for more than just cyberization. When programmed correctly, they can be used to boost immunity to fight disease.</li>
+			<li TKey="gitsCyberizationNetTip">Cyberization of the brain allows the user to connect to the pervasive net. This can let the user access databases to boost certain skills for some time, or even connect with others in combat.</li>
+			<li TKey="gitsCyberizationDownsidesTip">Cyberization of the brain provides numerous benefits, but can also have drawbacks depending on how much of the brain is cyberized.</li>
+			<li TKey="gitsCyberizationAdaptionTip">Cyberization requires time for the user to adapt after undergoing surgery, usually for only a few days. This will lead to increased need for sleep and other symptoms.</li>
+			<li TKey="gitsCyberbrainDiseasesTip">During the adaption phase, there is a low chance a cyberbrain user might contract a cyberbrain disease.</li>
+			<li TKey="gitsCyberbrainCyberbrainSclerosisTip">Cyberbrain Sclerosis is an extremely rare cyberbrain disease where brain tissue hardens over time. This leads to memory loss, issues talking, and eventually- brain death.</li>
+			<li TKey="gitsCyberbrainCSSTip">Closed Shell Syndrome is a very rare cyberbrain disease where a user shuts themself off from the world, but may become a savant in other areas.</li>
+			<li TKey="gitsExtremeCyberizationTip">Extreme cyberization of the brain is a rare and expensive procedure that can lead to the user obtaining powerful abilities, but also with great cost to their mental state.</li>
+<!-- DLC dependant tips-->
+			<li TKey="gitsAnomalyOrganDecayTip" MayRequire="Ludeon.RimWorld.Anomaly">Organ decay can be cured through the use of medical micromachines. The surgery is risky, but it might be your only option.</li>
+<!-- Third party mod dependant tips
+Elite Bionics Framework-->
+			<li TKey="gitsEBFShellDurabilityTip" MayRequire="V1024.EBFramework">Various cyberbrains can provide brain protection based on how advanced the shell is. Combat focused cyberbrains will tend to have stronger protection than others.</li>
+	  </tips>
+  </TipSetDef>
+</Defs>

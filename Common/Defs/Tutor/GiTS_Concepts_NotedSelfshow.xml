@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Cyberbrains Learning Helper Tutorials-->
+<Defs>
+<!-- General ConceptDefs-->
+  <ConceptDef>
+    <defName>gitsMicromachinesTutor</defName>
+    <label>Micromachines</label>
+    <priority>110</priority>
+    <helpText>Micromachines are advanced microscopic machines that allow your colonists to both conduct surgeries to remove various ailments as well as cyberize the human brain.</helpText>
+  </ConceptDef>
+
+  <ConceptDef>
+    <defName>gitsCyberbrainsTutor</defName>
+    <label>Cyberbrains</label>
+    <priority>111</priority>
+    <helpText>Cyberbrains are created through a process of cyberization using micromachines to enhance the human brain's abilities after an initial adaption phase lasting a few days. Cyberizing the brain of a colonist will grant them various abilities, bonuses, and overall increased consciousness with some specialized brains providing even further bonuses into certain niches.\n\nBeware that as cyberization increases on the human brain, the user will face increasing mental strain and therefore have a worsened mental break threashold and other possible issues.</helpText>
+  </ConceptDef>
+
+  <ConceptDef>
+    <defName>gitsCyberizationStagesTutor</defName>
+    <label>Cyberization stages</label>
+    <priority>112</priority>
+    <helpText>Brain cyberization has stages with increasing benefits and drawbacks accordingly:\n\nBasic - Provides basic enhancement, access to net databases and pain control abilities. Affects such a small amount of the brain that the user has no drawbacks and adapts within a day.\nEnhanced/Specialized - Builds upon the basic cyberbrain with a large improvement to bonuses, more abilities, as well as specialized variations for many niches. As a majority of the brain is cyberized the user needs 2 days to adapt and will face noticeable mental drawbacks.\nExtreme - These prototype cyberbrains are strong combining many specialized cyberbrains into one, providing the ultimate cyberbrain for their intended roles. As almost all the brain is cyberized, the user needs 3 days to adapt and faces significant mental drawbacks.</helpText>
+  </ConceptDef>
+
+  <ConceptDef>
+    <defName>gitsCyberbrainAbilitiesTutor</defName>
+    <label>Cyberbrain abilities</label>
+    <priority>113</priority>
+    <helpText>All cyberbrains feature some level of abilities, and with increased cyberization comes access to stronger abilities along with more of them. Abilities have set cooldowns unlike psycasting and are focused towards providing further limited time buffs in either work or combat roles.</helpText>
+  </ConceptDef>
+
+  <ConceptDef>
+    <defName>gitsCyberbrainDiseasesTutor</defName>
+    <label>Cyberbrain diseases</label>
+    <priority>114</priority>
+    <helpText>During the adaption phase of brain cyberization, there is a risk the user may contract a cyberbrain disease. These are special in the fact only cyberbrain users can get them, and are extremely rare.</helpText>
+  </ConceptDef>
+<!-- Third party mod dependant ConceptDefs-->
+  <ConceptDef MayRequire="V1024.EBFramework">
+    <defName>gitsShellDurabilityTutor</defName>
+    <label>Cyberbrain shells</label>
+    <priority>115</priority>
+    <helpText>Cyberbrains are surrounded by a shell- a physical barrier to protect the brain. These comes in three types: thin metal shell, metal shell and advanced metal shell. More advanced cyberbrains as well as those focused towards combat will feature stronger shells.</helpText>
+  </ConceptDef>
+</Defs>

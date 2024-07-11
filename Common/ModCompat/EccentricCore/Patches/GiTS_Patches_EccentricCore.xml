@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Cyberbrains
+Eccentric Tech Core Patches-->
+<Patch>
+<!-- *** Cyberbrain Base Patches ***
+gitsMakeMicromachinesBase add recipeUser EccentricNanofabricator-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[@Name="gitsMakeMicromachinesBase"]/recipeUsers</xpath>
+		<value>
+			<li>EccentricNanofabricator</li>
+		</value>
+	</Operation>
+</Patch>

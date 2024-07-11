@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Base Hediffs-->
+<Defs>
+<!-- *** Cyberbrain Base ***-->
+	<HediffDef Name="gitsAddedCyberbrainBase" ParentName="AddedBodyPartBase" Abstract="True">
+    <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<everCurableByItem>false</everCurableByItem>
+		<isBad>false</isBad>
+		<priceImpact>true</priceImpact>
+		<initialSeverity>0.001</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<tags>
+			<li>GiTS_Cyberbrain</li>
+		</tags>
+	</HediffDef>
+
+	<ThingDef Name="gitsBodyPartCyberbrainBase" ParentName="BodyPartBionicBase" Abstract="True">
+	  <techLevel>Spacer</techLevel>
+    <generateCommonality>0.25</generateCommonality>
+		<graphicData Inherit="False">
+			<texPath>GiTSCyberbrains/Things/Cyberbrains/gitsCyberbrain</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.75</drawSize>
+		</graphicData>
+    <tradeTags Inherit="False">
+      <li>GiTS_TechHediff_Bionics</li>
+    </tradeTags>
+		<techHediffsTags Inherit="False">
+			<li>GiTS_TechHediff_Bionics</li>
+		</techHediffsTags>
+		<thingCategories Inherit="False">
+			<li>BodyPartsUltra</li>
+		</thingCategories>
+		<statBases>
+			<Mass>3</Mass>
+		</statBases>
+		<recipeMaker>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef Name="gitsSurgeryInstallCyberbrainBase" ParentName="SurgeryInstallBodyPartArtificialBase" Abstract="True">
+		<appliedOnFixedBodyParts>
+			<li>Brain</li>
+		</appliedOnFixedBodyParts>
+	</RecipeDef>
+
+<!-- *** Cyberbrain Basic Base ***
+15% increased part efficiency
+thin metal shell
+has no drawbacks-->
+  <HediffDef Name="gitsAddedCyberbrainBasicBase" ParentName="gitsAddedCyberbrainBase" Abstract="True">
+		<defaultLabelColor>(30, 0, 222)</defaultLabelColor> <!-- blue-->
+		<tags>
+			<li>GiTS_BasicCyberbrain</li>
+		</tags>
+		<abilities>
+			<li>gitsPainReceptorDampen</li>
+			<li>gitsWorkDBUplink</li>
+		</abilities>
+		<addedPartProps>
+			<betterThanNatural>true</betterThanNatural>
+			<solid>true</solid>
+			<partEfficiency>1.15</partEfficiency>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay"> <!-- 1 day adaption process-->
+				<severityPerDay>1.0</severityPerDay>
+			</li>
+			<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+				<scaleAdjustment>0.10</scaleAdjustment>
+			</li>
+		</comps>
+  </HediffDef>
+
+	<ThingDef Name="gitsBodyPartCyberbrainBasicBase" ParentName="gitsBodyPartCyberbrainBase" Abstract="True">
+		<graphicData>
+			<texPath>GiTSCyberbrains/Things/Cyberbrains/gitsCyberbrainBasic</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.75</drawSize>
+		</graphicData>
+		<statBases>
+			<WorkToMake>28000</WorkToMake>
+		</statBases>
+		<costList>
+			<gitsMicromachines>1</gitsMicromachines>
+			<Hyperweave>20</Hyperweave>
+			<ComponentSpacer>4</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>8</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>gitsResearchBasicCyberization</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef Name="gitsSurgeryInstallBasicCyberbrainBase" ParentName="gitsSurgeryInstallCyberbrainBase" Abstract="True">
+		<workAmount>3000</workAmount>
+		<skillRequirements>
+			<Medicine>8</Medicine>
+		</skillRequirements>
+		<researchPrerequisite>gitsResearchBasicCyberization</researchPrerequisite>
+	</RecipeDef>
+
+<!-- *** Cyberbrain Enhanced Base ***
+40% increased part efficiency
+metal shell
+has drawbacks-->
+  <HediffDef Name="gitsAddedCyberbrainEnhancedBase" ParentName="gitsAddedCyberbrainBase" Abstract="True">
+		<defaultLabelColor>(224, 198, 0)</defaultLabelColor> <!-- yellow-->
+		<tags>
+			<li>GiTS_EnhancedCyberbrain</li>
+		</tags>
+		<abilities>
+			<li>gitsPainReceptorDampen</li>
+			<li>gitsWorkDBUplink</li>
+		</abilities>
+		<addedPartProps>
+			<betterThanNatural>true</betterThanNatural>
+			<solid>true</solid>
+			<partEfficiency>1.40</partEfficiency>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay"> <!-- 2 day adaption process-->
+				<severityPerDay>0.50</severityPerDay>
+			</li>
+			<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+				<scaleAdjustment>0.20</scaleAdjustment>
+			</li>
+		</comps>
+  </HediffDef>
+
+	<ThingDef Name="gitsBodyPartCyberbrainEnhancedBase" ParentName="gitsBodyPartCyberbrainBase" Abstract="True">
+		<graphicData>
+			<texPath>GiTSCyberbrains/Things/Cyberbrains/gitsCyberbrainEnhanced</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.75</drawSize>
+		</graphicData>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<statBases>
+			<WorkToMake>32000</WorkToMake>
+		</statBases>
+		<costList>
+			<gitsMicromachines>1</gitsMicromachines>
+			<Hyperweave>30</Hyperweave>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>gitsResearchEnhancedCyberization</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef Name="gitsSurgeryInstallEnhancedCyberbrainBase" ParentName="gitsSurgeryInstallCyberbrainBase" Abstract="True">
+		<workAmount>3400</workAmount>
+		<skillRequirements>
+			<Medicine>10</Medicine>
+		</skillRequirements>
+		<researchPrerequisite>gitsResearchEnhancedCyberization</researchPrerequisite>
+	</RecipeDef>
+
+<!-- *** Cyberbrain Specialized Base ***
+**Combat
+40% increased part efficiency
+metal shell
+has drawbacks-->
+  <HediffDef Name="gitsAddedCyberbrainSpecCombatBase" ParentName="gitsAddedCyberbrainBase" Abstract="True">
+		<defaultLabelColor>(224, 120, 0)</defaultLabelColor> <!-- orange-->
+		<tags>
+			<li>GiTS_SpecializedCyberbrain</li>
+			<li>GiTS_CombatCyberbrain</li>
+		</tags>
+		<abilities>
+			<li>gitsPainReceptorNullify</li>
+			<li>gitsFirstAidDBUplink</li>
+		</abilities>
+		<addedPartProps>
+			<betterThanNatural>true</betterThanNatural>
+			<solid>true</solid>
+			<partEfficiency>1.40</partEfficiency>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay"> <!-- 2 day adaption process-->
+				<severityPerDay>0.50</severityPerDay>
+			</li>
+			<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+				<scaleAdjustment>0.20</scaleAdjustment>
+			</li>
+		</comps>
+  </HediffDef>
+
+<!--**Work
+40% increased part efficiency
+thin metal shell
+has drawbacks-->
+  <HediffDef Name="gitsAddedCyberbrainSpecWorkBase" ParentName="gitsAddedCyberbrainBase" Abstract="True">
+		<defaultLabelColor>(224, 120, 0)</defaultLabelColor> <!-- orange-->
+		<tags>
+			<li>GiTS_SpecializedCyberbrain</li>
+			<li>GiTS_WorkCyberbrain</li>
+		</tags>
+		<abilities>
+			<li>gitsPainReceptorDampen</li>
+			<li>gitsWorkDBUplink</li>
+		</abilities>
+		<addedPartProps>
+			<betterThanNatural>true</betterThanNatural>
+			<solid>true</solid>
+			<partEfficiency>1.40</partEfficiency>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay"> <!-- 2 day adaption process-->
+				<severityPerDay>0.50</severityPerDay>
+			</li>
+			<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+				<scaleAdjustment>0.10</scaleAdjustment>
+			</li>
+		</comps>
+  </HediffDef>
+
+	<ThingDef Name="gitsBodyPartCyberbrainSpecializedBase" ParentName="gitsBodyPartCyberbrainBase" Abstract="True">
+		<graphicData>
+			<texPath>GiTSCyberbrains/Things/Cyberbrains/gitsCyberbrainSpecialized</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.75</drawSize>
+		</graphicData>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<statBases>
+			<WorkToMake>34000</WorkToMake>
+		</statBases>
+		<costList>
+			<gitsMicromachines>2</gitsMicromachines>
+			<Hyperweave>30</Hyperweave>
+			<Gold>4</Gold>
+			<ComponentSpacer>6</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>gitsResearchSpecializedCyberization</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef Name="gitsSurgeryInstallSpecializedCyberbrainBase" ParentName="gitsSurgeryInstallCyberbrainBase" Abstract="True">
+		<workAmount>3800</workAmount>
+		<skillRequirements>
+			<Medicine>10</Medicine>
+		</skillRequirements>
+		<researchPrerequisite>gitsResearchSpecializedCyberization</researchPrerequisite>
+	</RecipeDef>
+
+<!-- *** Cyberbrain Advanced Specialized Base ***
+**Combat
+50% increased part efficiency
+adv metal shell
+has drawbacks-->
+  <HediffDef Name="gitsAddedCyberbrainAdvCombatBase" ParentName="gitsAddedCyberbrainBase" Abstract="True">
+		<defaultLabelColor>(224, 120, 0)</defaultLabelColor> <!-- orange-->
+		<tags>
+			<li>GiTS_SpecializedCyberbrain</li>
+			<li>GiTS_AdvancedCyberbrain</li>
+			<li>GiTS_CombatCyberbrain</li>
+		</tags>
+		<abilities>
+			<li>gitsPainReceptorNullify</li>
+			<li>gitsFirstAidDBUplink</li>
+			<li>gitsOL40SCombatNetwork</li>
+		</abilities>
+		<addedPartProps>
+			<betterThanNatural>true</betterThanNatural>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay"> <!-- 2 day adaption process-->
+				<severityPerDay>0.50</severityPerDay>
+			</li>
+			<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+				<scaleAdjustment>0.40</scaleAdjustment>
+			</li>
+		</comps>
+  </HediffDef>
+
+<!--**Work
+50% increased part efficiency
+metal shell
+has drawbacks-->
+  <HediffDef Name="gitsAddedCyberbrainAdvWorkBase" ParentName="gitsAddedCyberbrainBase" Abstract="True">
+		<defaultLabelColor>(224, 120, 0)</defaultLabelColor> <!-- orange-->
+		<tags>
+			<li>GiTS_SpecializedCyberbrain</li>
+			<li>GiTS_AdvancedCyberbrain</li>
+			<li>GiTS_WorkCyberbrain</li>
+		</tags>
+		<abilities>
+			<li>gitsPainReceptorDampen</li>
+			<li>gitsWorkDBUplink</li>
+		</abilities>
+		<addedPartProps>
+			<betterThanNatural>true</betterThanNatural>
+			<solid>true</solid>
+			<partEfficiency>1.50</partEfficiency>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay"> <!-- 2 day adaption process-->
+				<severityPerDay>0.50</severityPerDay>
+			</li>
+			<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+				<scaleAdjustment>0.20</scaleAdjustment>
+			</li>
+		</comps>
+  </HediffDef>
+
+	<ThingDef Name="gitsBodyPartCyberbrainAdvancedBase" ParentName="gitsBodyPartCyberbrainBase" Abstract="True">
+		<graphicData>
+			<texPath>GiTSCyberbrains/Things/Cyberbrains/gitsCyberbrainSpecialized</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.75</drawSize>
+		</graphicData>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<statBases>
+			<WorkToMake>36000</WorkToMake>
+		</statBases>
+		<costList>
+			<gitsMicromachines>2</gitsMicromachines>
+			<Hyperweave>35</Hyperweave>
+			<Gold>12</Gold>
+			<ComponentSpacer>8</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>10</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>gitsResearchAdvSpecializedCyberization</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef Name="gitsSurgeryInstallAdvancedCyberbrainBase" ParentName="gitsSurgeryInstallCyberbrainBase" Abstract="True">
+		<workAmount>4000</workAmount>
+		<skillRequirements>
+			<Medicine>10</Medicine>
+		</skillRequirements>
+		<researchPrerequisite>gitsResearchAdvSpecializedCyberization</researchPrerequisite>
+	</RecipeDef>
+
+<!-- *** Cyberbrain Extreme Base ***
+65% increased part efficiency
+adv metal shell
+heavy drawbacks-->
+  <HediffDef Name="gitsAddedCyberbrainExtremeBase" ParentName="gitsAddedCyberbrainBase" Abstract="True">
+		<defaultLabelColor>(194, 19, 0)</defaultLabelColor> <!-- red-->
+		<tags>
+			<li>GiTS_ExtremeCyberbrain</li>
+		</tags>
+		<abilities>
+			<li>gitsPainReceptorNullify</li>
+			<li>gitsWorkDBUplink</li>
+		</abilities>
+		<addedPartProps>
+			<betterThanNatural>true</betterThanNatural>
+			<solid>true</solid>
+			<partEfficiency>1.65</partEfficiency>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay"> <!-- 3 day adaption process-->
+				<severityPerDay>0.33</severityPerDay>
+			</li>
+			<li MayRequire="V1024.EBFramework" Class="EBF.Hediffs.HediffCompProperties_MaxHPAdjust">
+				<scaleAdjustment>0.40</scaleAdjustment>
+			</li>
+		</comps>
+  </HediffDef>
+
+	<ThingDef Name="gitsBodyPartCyberbrainExtremeBase" ParentName="gitsBodyPartCyberbrainBase" Abstract="True">
+		<graphicData>
+			<texPath>GiTSCyberbrains/Things/Cyberbrains/gitsCyberbrainExtreme</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.75</drawSize>
+		</graphicData>
+		<thingSetMakerTags>
+			<li>RewardStandardLowFreq</li>
+		</thingSetMakerTags>
+		<statBases>
+			<WorkToMake>40000</WorkToMake>
+		</statBases>
+		<costList>
+			<gitsMicromachines>3</gitsMicromachines>
+			<Hyperweave>45</Hyperweave>
+			<Gold>20</Gold>
+			<ComponentSpacer>10</ComponentSpacer>
+		</costList>
+		<recipeMaker>
+			<skillRequirements>
+				<Crafting>12</Crafting>
+			</skillRequirements>
+			<researchPrerequisite>gitsResearchExtremeCyberization</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+	<RecipeDef Name="gitsSurgeryInstallExtremeCyberbrainBase" ParentName="gitsSurgeryInstallCyberbrainBase" Abstract="True">
+		<workAmount>4500</workAmount>
+		<skillRequirements>
+			<Medicine>12</Medicine>
+		</skillRequirements>
+		<researchPrerequisite>gitsResearchExtremeCyberization</researchPrerequisite>
+	</RecipeDef>
+
+<!-- *** Cyberbrain Disease Base ***-->
+  <HediffDef Name="gitsCyberbrainDiseaseBase" ParentName="ChronicDiseaseBase" Abstract="True">
+		<tags>
+			<li>GiTS_CyberbrainDisease</li>
+		</tags>
+  </HediffDef>
+
+<!-- *** Cyberbrain Ability Hediff Base ***-->
+  <HediffDef Name="gitsCyberbrainAbilityHediffBase" Abstract="True">
+    <defaultLabelColor>(212, 212, 212)</defaultLabelColor> <!-- grey-->
+    <hediffClass>HediffWithComps</hediffClass>
+		<everCurableByItem>false</everCurableByItem>
+    <isBad>false</isBad>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<tags>
+			<li>GiTS_CyberbrainAbility</li>
+		</tags>
+  </HediffDef>
+
+<!-- *** Micromachine Surgeries ***
+Immunity nanites base-->
+	<HediffDef Name="gitsImmunityNanitesBase" Abstract="True">
+		<defaultLabelColor>(212, 212, 212)</defaultLabelColor> <!-- grey-->
+		<hediffClass>HediffWithComps</hediffClass>
+		<priceImpact>true</priceImpact>
+		<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<everCurableByItem>false</everCurableByItem>
+		<isBad>false</isBad>
+		<tags>
+			<li>GiTS_MicromachineSurgery</li>
+			<li>GiTS_ImmunityNanites</li>
+		</tags>
+	</HediffDef>
+
+	<RecipeDef Name="gitsSurgeryImmunityNanitesBase" ParentName="SurgeryInstallImplantBase" Abstract="True">
+		<uiIconThing>gitsMicromachines</uiIconThing>
+		<researchPrerequisite>gitsResearchImmunityNanites</researchPrerequisite>
+		<deathOnFailedSurgeryChance>0.02</deathOnFailedSurgeryChance>
+		<workAmount>1400</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>false</anesthetize>
+		<isViolation>false</isViolation>
+		<skillRequirements>
+			<Medicine>7</Medicine>
+		</skillRequirements>
+		<ingredients Inherit="False" />
+	</RecipeDef>
+
+<!-- Micromachine repair surgeries base-->
+	<RecipeDef Name="gitsSurgeryRepairNanitesBase" ParentName="SurgeryRemoveImplantBase" Abstract="True">
+		<researchPrerequisite>gitsToxinRepairNanites</researchPrerequisite>
+		<uiIconThing>gitsMicromachines</uiIconThing>
+		<descriptionHyperlinks>
+			<ThingDef>gitsMicromachines</ThingDef>
+		</descriptionHyperlinks>
+		<workerClass>Recipe_RemoveHediff</workerClass>
+		<isViolation>false</isViolation>
+	</RecipeDef>
+
+<!-- Food poisioning surgery base-->
+	<RecipeDef Name="gitsSurgeryRemoveFoodPoisoningBase" ParentName="gitsSurgeryRepairNanitesBase" Abstract="True">
+		<skillRequirements>
+			<Medicine>7</Medicine>
+		</skillRequirements>
+		<workAmount>3000</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <anesthetize>false</anesthetize>
+	</RecipeDef>
+
+<!-- Toxin buildup surgery base-->
+	<RecipeDef Name="gitsSurgeryRemoveToxinBuildupBase" ParentName="gitsSurgeryRepairNanitesBase" Abstract="True">
+		<skillRequirements>
+			<Medicine>8</Medicine>
+		</skillRequirements>
+		<workAmount>3000</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+	</RecipeDef>
+
+<!-- Organ decay repair surgery base-->
+	<RecipeDef Name="gitsSurgeryRemoveOrganDecayBase" ParentName="gitsSurgeryRepairNanitesBase" Abstract="True">
+		<researchPrerequisite>gitsOrganDecayNanites</researchPrerequisite>
+		<skillRequirements>
+			<Medicine>10</Medicine>
+		</skillRequirements>
+		<workAmount>4000</workAmount>
+		<ingredients Inherit="False" />
+	</RecipeDef>
+</Defs>

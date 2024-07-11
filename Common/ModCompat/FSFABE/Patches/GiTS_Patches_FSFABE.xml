@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Cyberbrains
+FSF Advanced Bionics Expansion Patches-->
+<Patch>
+<!-- *** ResearchProjectDef Patches ***
+add BrainSurgery prerequisite to gitsResearchExtremeCyberization-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ResearchProjectDef[defName="gitsResearchExtremeCyberization"]/prerequisites</xpath>
+		<value>
+			<li>FSFAdvancedBrainImplants</li>
+		</value>
+	</Operation>
+</Patch>

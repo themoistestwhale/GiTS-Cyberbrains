@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Cyberbrain Abilities-->
+<Defs>
+<!-- *** Cyberbrain Ability Base ***
+RW days are made of 60000 ticks or 1000 seconds, 60 ticks is 1 second-->
+  <AbilityDef Name="gitsCyberbrainAbilityBase" Abstract="True">
+    <iconPath>GiTSCyberbrains/UI/gitsCyberbrainIcon</iconPath>
+		<cooldownTicksRange>180000</cooldownTicksRange> <!-- 3 in game days-->
+    <jobDef>CastAbilityOnThing</jobDef>
+		<groupAbility>true</groupAbility>
+		<hostile>false</hostile>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<targetRequired>false</targetRequired>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <statBases>
+      <Ability_Duration>1000</Ability_Duration>
+    </statBases>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetable>false</targetable>
+			<drawAimPie>false</drawAimPie>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+			<violent>false</violent>
+		</verbProperties>
+  </AbilityDef>
+
+  <AbilityDef Name="gitsCombatCyberbrainAbilityBase" ParentName="gitsCyberbrainAbilityBase" Abstract="True">
+		<cooldownTicksRange>90000</cooldownTicksRange> <!-- 1.5 in game days-->
+		<casterMustBeCapableOfViolence Inherit="False" />
+  </AbilityDef>
+
+  <AbilityDef Name="gitsToggleCyberbrainAbilityBase" ParentName="gitsCyberbrainAbilityBase" Abstract="True">
+		<cooldownTicksRange>60</cooldownTicksRange>
+  </AbilityDef>
+
+<!-- *** Cyberbrain Dampen Pain Receptors ***-->
+  <AbilityDef ParentName="gitsToggleCyberbrainAbilityBase">
+    <defName>gitsPainReceptorDampen</defName>
+    <label>Dampen pain receptors</label>
+    <description>Dampen pain receptors in the user's cyberbrain, allowing the user to almost lower felt pain.</description>
+    <uiOrder>2</uiOrder>
+    <statBases>
+      <Ability_Duration>500</Ability_Duration> <!-- 12 hours in game-->
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>gitsPainReceptorDampenHediff</hediffDef>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="gitsToggleCyberbrainAbilityBase">
+    <defName>gitsRemovePainReceptorDampen</defName>
+    <label>Undampen pain receptors</label>
+    <description>Undampen pain receptors in the user's cyberbrain, restoring felt pain back to normal.</description>
+    <uiOrder>1</uiOrder>
+    <comps>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>gitsPainReceptorDampenHediff</hediffDef>
+				<applyToSelf>true</applyToSelf>
+			</li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef ParentName="gitsCyberbrainAbilityHediffBase">
+    <defName>gitsPainReceptorDampenHediff</defName>
+    <label>Pain receptors dampened</label>
+    <description>Cyberbrain pain receptors dampened, incoming felt pain reduced dramatically.</description>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+  		<abilities>
+			  <li>gitsRemovePainReceptorDampen</li>
+		  </abilities>
+    <stages>
+      <li>
+        <painFactor>0.25</painFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+<!-- *** Cyberbrain Nullify Pain Receptors ***-->
+  <AbilityDef ParentName="gitsToggleCyberbrainAbilityBase">
+    <defName>gitsPainReceptorNullify</defName>
+    <label>Nullify pain receptors</label>
+    <description>Nullify pain receptors in the user's cyberbrain, removing all felt pain entirely.</description>
+    <uiOrder>2</uiOrder>
+    <statBases>
+      <Ability_Duration>500</Ability_Duration> <!-- 12 hours in game-->
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>gitsPainReceptorNullifyHediff</hediffDef>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="gitsToggleCyberbrainAbilityBase">
+    <defName>gitsRestorePainReceptorNullify</defName>
+    <label>Restore pain receptors</label>
+    <description>Restore pain receptors in the user's cyberbrain, restoring felt pain back to normal.</description>
+    <uiOrder>1</uiOrder>
+    <comps>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>gitsPainReceptorNullifyHediff</hediffDef>
+				<applyToSelf>true</applyToSelf>
+			</li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef ParentName="gitsCyberbrainAbilityHediffBase">
+    <defName>gitsPainReceptorNullifyHediff</defName>
+    <label>Pain receptors nullified</label>
+    <description>Cyberbrain pain receptors nullified, removing all felt pain entirely.</description>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+  		<abilities>
+			  <li>gitsRestorePainReceptorNullify</li>
+		  </abilities>
+    <stages>
+      <li>
+        <painFactor>0.00</painFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
+<!-- *** Cyberbrain Work DB Uplink ***-->
+  <AbilityDef ParentName="gitsCyberbrainAbilityBase">
+    <defName>gitsWorkDBUplink</defName>
+    <label>Work database uplink</label>
+    <uiOrder>3</uiOrder>
+    <description>Access a large number of databases on a variety of work professions stored on the net via the user's cyberbrain, enhancing work speed for some time.</description>
+    <statBases>
+      <Ability_Duration>1000</Ability_Duration> <!-- 24 hours in game-->
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>gitsWorkDBUplinkHediff</hediffDef>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef ParentName="gitsCyberbrainAbilityHediffBase">
+    <defName>gitsWorkDBUplinkHediff</defName>
+    <label>Work database uplink</label>
+    <description>User is accessing an info database on the net, enhancing work speed.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <WorkSpeedGlobal>0.20</WorkSpeedGlobal>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+<!-- *** Cyberbrain Medical DB Uplink ***-->
+  <AbilityDef ParentName="gitsCyberbrainAbilityBase">
+    <defName>gitsMedicalDBUplink</defName>
+    <label>Medical database uplink</label>
+    <uiOrder>4</uiOrder>
+    <description>Access a large number of databases on medical treatment stored on the net via the user's cyberbrain, enhancing speed and ability in medical tending or surgeries.</description>
+    <statBases>
+      <Ability_Duration>1000</Ability_Duration> <!-- 24 hours in game-->
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AbilityMustBeCapableOf">
+        <workTags>
+          <li>Caring</li>
+        </workTags>
+      </li>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>gitsMedicalDBUplinkHediff</hediffDef>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef ParentName="gitsCyberbrainAbilityHediffBase">
+    <defName>gitsMedicalDBUplinkHediff</defName>
+    <label>Medical database uplink</label>
+    <description>User is accessing a medical database on the net, enhancing tending and surgery ability.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+				  <MedicalTendSpeed>0.20</MedicalTendSpeed>
+				  <MedicalTendQuality>0.10</MedicalTendQuality>
+				  <MedicalOperationSpeed>0.20</MedicalOperationSpeed>
+				  <MedicalSurgerySuccessChance>0.10</MedicalSurgerySuccessChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+<!-- *** Cyberbrain First Aid DB Uplink ***-->
+  <AbilityDef ParentName="gitsCombatCyberbrainAbilityBase">
+    <defName>gitsFirstAidDBUplink</defName>
+    <label>First Aid database uplink</label>
+    <uiOrder>5</uiOrder>
+    <description>Access a large number of databases on combat first aid treatment stored on the net via the user's cyberbrain, enhancing speed and ability in first aid.</description>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <statBases>
+      <Ability_Duration>500</Ability_Duration> <!-- 12 hours in game-->
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AbilityMustBeCapableOf">
+        <workTags>
+          <li>Caring</li>
+        </workTags>
+      </li>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>gitsFirstAidDBUplinkHediff</hediffDef>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef ParentName="gitsCyberbrainAbilityHediffBase">
+    <defName>gitsFirstAidDBUplinkHediff</defName>
+    <label>First aid database uplink</label>
+    <description>User is accessing a first aid database on the net, enhancing first aid ability.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+				  <MedicalTendSpeed>0.15</MedicalTendSpeed>
+				  <MedicalTendQuality>0.10</MedicalTendQuality>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+<!-- *** Cyberbrain CQB DB Uplink ***-->
+  <AbilityDef ParentName="gitsCombatCyberbrainAbilityBase">
+    <defName>gitsCQBDBUplink</defName>
+    <label>CQB database uplink</label>
+    <uiOrder>6</uiOrder>
+    <description>Access a large number of databases on CQB combat stored on the net via the user's cyberbrain, enhancing melee combat abilities.</description>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <statBases>
+      <Ability_Duration>500</Ability_Duration> <!-- 12 hours in game-->
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>gitsCQBDBUplinkHediff</hediffDef>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef ParentName="gitsCyberbrainAbilityHediffBase">
+    <defName>gitsCQBDBUplinkHediff</defName>
+    <label>CQB database uplink</label>
+    <description>User is accessing a CQB database on the net, enhancing melee abilities.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MeleeHitChance>3</MeleeHitChance>
+          <MeleeDodgeChance>9</MeleeDodgeChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+<!-- *** Cyberbrain FCS DB Uplink ***-->
+  <AbilityDef ParentName="gitsCombatCyberbrainAbilityBase">
+    <defName>gitsFCSDBUplink</defName>
+    <label>FCS database uplink</label>
+    <uiOrder>7</uiOrder>
+    <description>Access a large number of databases on FCS combat stored on the net via the user's cyberbrain, enhancing shooting abilities.</description>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <statBases>
+      <Ability_Duration>500</Ability_Duration> <!-- 12 hours in game-->
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>gitsFCSDBUplinkHediff</hediffDef>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef ParentName="gitsCyberbrainAbilityHediffBase">
+    <defName>gitsFCSDBUplinkHediff</defName>
+    <label>FCS database uplink</label>
+    <description>User is accessing a FCS database on the net, enhancing shooting abilities.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+          <AimingDelayFactor>-0.20</AimingDelayFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+<!-- *** Combat Cyberbrain OL40S Combat Network ***-->
+  <AbilityDef ParentName="gitsCombatCyberbrainAbilityBase">
+    <defName>gitsOL40SCombatNetwork</defName>
+    <label>OL40S combat network</label>
+    <description>Establish a wireless link through the net to boost the combat and movement ability of those nearby. The link will last for 24 hours and will remain attached to the host cyberbrain.</description>
+    <uiOrder>8</uiOrder>
+    <statBases>
+      <Ability_Duration>1000</Ability_Duration> <!-- 24 hours in game-->
+      <Ability_EffectRadius>15.9</Ability_EffectRadius>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AbilityRequiresCapacity">
+        <capacity>Talking</capacity>
+      </li>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>gitsOL40SCombatNetworkHediff</hediffDef>
+        <onlyBrain>true</onlyBrain>
+        <onlyApplyToSelf>true</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef ParentName="gitsCyberbrainAbilityHediffBase">
+    <defName>gitsOL40SCombatNetworkHediff</defName>
+    <label>OL40S combat network</label>
+    <description>By communicating with nearby allied combatants via the net, the cyberbrain host enhances situational awareness allowing for increased combat performance and faster combat maneuvers.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <hediff>gitsOL40SCombatNetworkHediffBuff</hediff>
+        <range>15.9</range>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="gitsCyberbrainAbilityHediffBase">
+    <defName>gitsOL40SCombatNetworkHediffBuff</defName>
+    <label>OL40S combat network</label>
+    <description>Situational awareness in combat is increased thanks to a combat communication network being supported by a nearby cyberbrain via the net.</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_Link">
+        <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+        <maxDistance>16</maxDistance>
+        <customMote>gitsMoteOL40SLink</customMote>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+          <AimingDelayFactor>-0.15</AimingDelayFactor>
+          <MeleeHitChance>2</MeleeHitChance>
+          <MoveSpeed>0.2</MoveSpeed>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

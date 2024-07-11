@@ -1,0 +1,1241 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Specialized Work Cyberbrains-->
+<Defs>
+<!-- ***Specialized Cyberbrains***
+Poseidon CS14 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecWorkBase">
+		<defName>gitsCS14Hediff</defName>
+		<label>Poseidon CS14 cyberbrain</label>
+		<labelNoun>an installed CS14 cyberbrain</labelNoun>
+		<description>A Poseidon CS14 cyberbrain, where the user has had a majority of the brain cyberized and a thin metal shell installed. This cyberbrain is specialized to enhance a user's cooking abilities.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsCS14Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsCS14Cyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Cooking>2</Cooking>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+  				<CookSpeed>0.30</CookSpeed> <!-- CS14 specific-->
+  				<DrugCookingSpeed>0.30</DrugCookingSpeed> <!-- CS14 specific-->
+  				<FoodPoisonChance>-0.25</FoodPoisonChance> <!-- CS14 specific-->
+  				<ButcheryFleshSpeed>0.30</ButcheryFleshSpeed> <!-- CS14 specific-->
+  				<ButcheryFleshEfficiency>0.18</ButcheryFleshEfficiency> <!-- CS14 specific-->
+  				<CleaningSpeed MayRequire="Aelanna.CleaningSpeed">0.25</CleaningSpeed> <!-- CS14 specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsCS14Cyberbrain</defName>
+		<label>Poseidon CS14 cyberbrain</label>
+		<description>This specialized Poseidon CS14 cyberbrain focuses on enhancing a user's cooking abilities.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsCS14Hediff</HediffDef>
+			<RecipeDef>gitsInstallCS14Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallCS14Cyberbrain</defName>
+		<label>install Poseidon CS14 cyberbrain</label>
+		<description>Install a Poseidon CS14 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsCS14Cyberbrain</ThingDef>
+			<HediffDef>gitsCS14Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Poseidon CS14 Cyberbrain.</jobString>
+		<addsHediff>gitsCS14Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsCS14Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsCS14Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Poseidon DS23 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecWorkBase">
+		<defName>gitsDS23Hediff</defName>
+		<label>Poseidon DS23 cyberbrain</label>
+		<labelNoun>an installed DS23 cyberbrain</labelNoun>
+		<description>A Poseidon DS23 cyberbrain, where the user has had a majority of the brain cyberized and a thin metal shell installed. This cyberbrain is specialized to enhance a user's drilling abilities and mining yield.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsDS23Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsDS23Cyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Mining>2</Mining>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<MiningSpeed>0.30</MiningSpeed> <!-- DS23 specific-->
+					<MiningYield>0.18</MiningYield> <!-- DS23 specific-->
+					<DeepDrillingSpeed>0.30</DeepDrillingSpeed> <!-- DS23 specific-->
+					<SmoothingSpeed>0.25</SmoothingSpeed> <!-- DS23 specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsDS23Cyberbrain</defName>
+		<label>Poseidon DS23 cyberbrain</label>
+		<description>This specialized Poseidon DS23 cyberbrain focuses on enhancing a user's drilling abilities and mining yield.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsDS23Hediff</HediffDef>
+			<RecipeDef>gitsInstallDS23Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallDS23Cyberbrain</defName>
+		<label>install Poseidon DS23 cyberbrain</label>
+		<description>Install a Poseidon DS23 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsDS23Cyberbrain</ThingDef>
+			<HediffDef>gitsDS23Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Poseidon DS23 Cyberbrain.</jobString>
+		<addsHediff>gitsDS23Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsDS23Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsDS23Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Poseidon PS39 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecWorkBase">
+		<defName>gitsPS39Hediff</defName>
+		<label>Poseidon PS39 cyberbrain</label>
+		<labelNoun>an installed PS39 cyberbrain</labelNoun>
+		<description>A Poseidon PS39 cyberbrain, where the user has had a majority of the brain cyberized and a thin metal shell installed. This cyberbrain is specialized to enhance a user's agricultural abilities and knowledge.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsPS39Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsPS39Cyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Plants>2</Plants>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<PlantWorkSpeed>0.30</PlantWorkSpeed> <!-- PS39 specific-->
+					<PlantHarvestYield>0.18</PlantHarvestYield> <!-- PS39 specific-->
+					<DrugHarvestYield>0.18</DrugHarvestYield> <!-- PS39 specific-->
+					<PruningSpeed MayRequire="Ludeon.RimWorld.Ideology">0.25</PruningSpeed> <!-- PS39 specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsPS39Cyberbrain</defName>
+		<label>Poseidon PS39 cyberbrain</label>
+		<description>This specialized Poseidon PS39 cyberbrain focuses on enhancing a user's agricultural abilities and knowledge.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsPS39Hediff</HediffDef>
+			<RecipeDef>gitsInstallPS39Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallPS39Cyberbrain</defName>
+		<label>install Poseidon PS39 cyberbrain</label>
+		<description>Install a Poseidon PS39 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsPS39Cyberbrain</ThingDef>
+			<HediffDef>gitsPS39Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Poseidon PS39 Cyberbrain.</jobString>
+		<addsHediff>gitsPS39Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsPS39Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsPS39Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Poseidon BS40 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecWorkBase">
+		<defName>gitsBS40Hediff</defName>
+		<label>Poseidon BS40 cyberbrain</label>
+		<labelNoun>an installed BS40 cyberbrain</labelNoun>
+		<description>A Poseidon BS40 cyberbrain, where the user has had a majority of the brain cyberized and a thin metal shell installed. This cyberbrain is specialized to enhance a user's construction and repair abilities.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsBS40Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsBS40Cyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Construction>2</Construction>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<ConstructionSpeed>0.30</ConstructionSpeed> <!-- BS40 specific-->
+					<ConstructSuccessChance>0.18</ConstructSuccessChance> <!-- BS40 specific-->
+					<SmoothingSpeed>0.25</SmoothingSpeed> <!-- BS40 specific-->
+					<FixBrokenDownBuildingSuccessChance>0.18</FixBrokenDownBuildingSuccessChance> <!-- BS40 specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsBS40Cyberbrain</defName>
+		<label>Poseidon BS40 cyberbrain</label>
+		<description>This specialized Poseidon BS40 cyberbrain focuses on enhancing a user's construction and repair abilities.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsBS40Hediff</HediffDef>
+			<RecipeDef>gitsInstallBS40Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallBS40Cyberbrain</defName>
+		<label>install Poseidon BS40 cyberbrain</label>
+		<description>Install a Poseidon BS40 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsBS40Cyberbrain</ThingDef>
+			<HediffDef>gitsBS40Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Poseidon BS40 Cyberbrain.</jobString>
+		<addsHediff>gitsBS40Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsBS40Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsBS40Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Poseidon FS57 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecWorkBase">
+		<defName>gitsFS57Hediff</defName>
+		<label>Poseidon FS57 cyberbrain</label>
+		<labelNoun>an installed FS57 cyberbrain</labelNoun>
+		<description>A Poseidon FS57 cyberbrain, where the user has had a majority of the brain cyberized and a thin metal shell installed. This cyberbrain is specialized to enhance a user's fabrication and crafting abilities.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsFS57Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsFS57Cyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Crafting>2</Crafting>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<GeneralLaborSpeed>0.30</GeneralLaborSpeed> <!-- FS57 specific-->
+					<SmeltingSpeed>0.30</SmeltingSpeed> <!-- FS57 specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsFS57Cyberbrain</defName>
+		<label>Poseidon FS57 cyberbrain</label>
+		<description>This specialized Poseidon FS57 cyberbrain focuses on enhancing a user's fabrication and crafting abilities.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsFS57Hediff</HediffDef>
+			<RecipeDef>gitsInstallFS57Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallFS57Cyberbrain</defName>
+		<label>install Poseidon FS57 cyberbrain</label>
+		<description>Install a Poseidon FS57 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsFS57Cyberbrain</ThingDef>
+			<HediffDef>gitsFS57Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Poseidon FS57 Cyberbrain.</jobString>
+		<addsHediff>gitsFS57Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsFS57Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsFS57Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Poseidon TS63 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecWorkBase">
+		<defName>gitsTS63Hediff</defName>
+		<label>Poseidon TS63 cyberbrain</label>
+		<labelNoun>an installed TS63 cyberbrain</labelNoun>
+		<description>A Poseidon TS63 cyberbrain, where the user has had a majority of the brain cyberized and a thin metal shell installed. This cyberbrain is specialized to enhance a user's social and negotiation abilities.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsTS63Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsTS63Cyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Social>2</Social>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.0</socialFightChanceFactor> <!-- TS63 specific-->
+				<statOffsets>
+					<NegotiationAbility>0.30</NegotiationAbility> <!-- TS63 specific-->
+					<SocialImpact>0.18</SocialImpact> <!-- TS63 specific-->
+ 					<TradePriceImprovement>0.15</TradePriceImprovement> <!-- TS63 specific-->
+					<ArrestSuccessChance>0.25</ArrestSuccessChance> <!-- TS63 specific-->
+					<SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">0.25</SuppressionPower> <!-- TS63 specific-->
+					<ConversionPower MayRequire="Ludeon.RimWorld.Ideology">0.20</ConversionPower> <!-- TS63 specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsTS63Cyberbrain</defName>
+		<label>Poseidon TS63 cyberbrain</label>
+		<description>This specialized Poseidon TS63 cyberbrain focuses on enhancing a user's social and negotiation abilities.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsTS63Hediff</HediffDef>
+			<RecipeDef>gitsInstallTS63Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallTS63Cyberbrain</defName>
+		<label>install Poseidon TS63 cyberbrain</label>
+		<description>Install a Poseidon TS63 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsTS63Cyberbrain</ThingDef>
+			<HediffDef>gitsTS63Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Poseidon TS63 Cyberbrain.</jobString>
+		<addsHediff>gitsTS63Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsTS63Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsTS63Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Poseidon MS71 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecWorkBase">
+		<defName>gitsMS71Hediff</defName>
+		<label>Poseidon MS71 cyberbrain</label>
+		<labelNoun>an installed MS71 cyberbrain</labelNoun>
+		<description>A Poseidon MS71 cyberbrain, where the user has had a majority of the brain cyberized and a thin metal shell installed. This cyberbrain is specialized to enhance a user's medical tending and operating abilities.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsMS71Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsMS71Cyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Medicine>2</Medicine>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<MedicalTendSpeed>0.30</MedicalTendSpeed> <!-- MS71 specific-->
+					<MedicalOperationSpeed>0.30</MedicalOperationSpeed> <!-- MS71 specific-->
+					<MedicalTendQuality>0.18</MedicalTendQuality> <!-- MS71 specific-->
+					<MedicalSurgerySuccessChance>0.25</MedicalSurgerySuccessChance> <!-- MS71 specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+		<abilities>
+			<li>gitsMedicalDBUplink</li>
+		</abilities>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsMS71Cyberbrain</defName>
+		<label>Poseidon MS71 cyberbrain</label>
+		<description>This specialized Poseidon MS71 cyberbrain focuses on enhancing a user's medical tending and operating abilities.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsMS71Hediff</HediffDef>
+			<RecipeDef>gitsInstallMS71Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallMS71Cyberbrain</defName>
+		<label>install Poseidon MS71 cyberbrain</label>
+		<description>Install a Poseidon MS71 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsMS71Cyberbrain</ThingDef>
+			<HediffDef>gitsMS71Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Poseidon MS71 Cyberbrain.</jobString>
+		<addsHediff>gitsMS71Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsMS71Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsMS71Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Poseidon RS86 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainSpecWorkBase">
+		<defName>gitsRS86Hediff</defName>
+		<label>Poseidon RS86 cyberbrain</label>
+		<labelNoun>an installed RS86 cyberbrain</labelNoun>
+		<description>A Poseidon RS86 cyberbrain, where the user has had a majority of the brain cyberized and a thin metal shell installed. This cyberbrain is specialized to enhance a user's data analysis, research and hacking abilities.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsRS86Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsRS86Cyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Intellectual>2</Intellectual>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<ResearchSpeed>0.35</ResearchSpeed> <!-- RS86 specific-->
+					<ReadingSpeed>0.30</ReadingSpeed> <!-- RS86 specific-->
+					<HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">1.5</HackingSpeed> <!-- RS86 specific-->
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.10</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainSpecializedBase">
+		<defName>gitsRS86Cyberbrain</defName>
+		<label>Poseidon RS86 cyberbrain</label>
+		<description>This specialized Poseidon RS86 cyberbrain focuses on enhancing a user's data analysis, research and hacking abilities.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsRS86Hediff</HediffDef>
+			<RecipeDef>gitsInstallRS86Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallSpecializedCyberbrainBase">
+		<defName>gitsInstallRS86Cyberbrain</defName>
+		<label>install Poseidon RS86 cyberbrain</label>
+		<description>Install a Poseidon RS86 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsRS86Cyberbrain</ThingDef>
+			<HediffDef>gitsRS86Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Poseidon RS86 Cyberbrain.</jobString>
+		<addsHediff>gitsRS86Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsRS86Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsRS86Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- ***Advanced Specialized Cyberbrains***
+Poseidon FS113 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainAdvWorkBase">
+		<defName>gitsFS113Hediff</defName>
+		<label>Poseidon FS113 cyberbrain</label>
+		<labelNoun>an installed FS113 cyberbrain</labelNoun>
+		<description>An advanced Poseidon FS113 cyberbrain, where the user has had a majority of the brain cyberized and a metal shell installed. This cyberbrain is specialized to enhance a user's cooking and agricultural abilities.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsFS113Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsFS113Cyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Cooking>2</Cooking>
+			<Plants>2</Plants>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.30</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.15</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<PlantWorkSpeed>0.35</PlantWorkSpeed> <!-- FS113 specific-->
+					<PlantHarvestYield>0.18</PlantHarvestYield> <!-- FS113 specific-->
+					<DrugHarvestYield>0.18</DrugHarvestYield> <!-- FS113 specific-->
+					<PruningSpeed MayRequire="Ludeon.RimWorld.Ideology">0.30</PruningSpeed> <!-- FS113 specific-->
+  				<CookSpeed>0.35</CookSpeed> <!-- FS113 specific-->
+  				<DrugCookingSpeed>0.35</DrugCookingSpeed> <!-- FS113 specific-->
+  				<FoodPoisonChance>-0.25</FoodPoisonChance> <!-- FS113 specific-->
+  				<ButcheryFleshSpeed>0.35</ButcheryFleshSpeed> <!-- FS113 specific-->
+  				<ButcheryFleshEfficiency>0.18</ButcheryFleshEfficiency> <!-- FS113 specific-->
+  				<CleaningSpeed MayRequire="Aelanna.CleaningSpeed">0.30</CleaningSpeed> <!-- FS113 specific-->
+					<GlobalLearningFactor>0.60</GlobalLearningFactor>
+					<ResearchSpeed>0.10</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.20</MeditationFocusGain>
+					<MentalBreakThreshold>0.12</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2.2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainAdvancedBase">
+		<defName>gitsFS113Cyberbrain</defName>
+		<label>Poseidon FS113 cyberbrain</label>
+		<description>This advanced Poseidon FS113 cyberbrain focuses on enhancing a user's cooking and agricultural abilities.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsFS113Hediff</HediffDef>
+			<RecipeDef>gitsInstallFS113Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallAdvancedCyberbrainBase">
+		<defName>gitsInstallFS113Cyberbrain</defName>
+		<label>install Poseidon FS113 cyberbrain</label>
+		<description>Install a Poseidon FS113 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsFS113Cyberbrain</ThingDef>
+			<HediffDef>gitsFS113Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Poseidon FS113 Cyberbrain.</jobString>
+		<addsHediff>gitsFS113Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsFS113Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsFS113Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Poseidon YS151 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainAdvWorkBase">
+		<defName>gitsYS151Hediff</defName>
+		<label>Poseidon YS151 cyberbrain</label>
+		<labelNoun>an installed YS151 cyberbrain</labelNoun>
+		<description>An advanced Poseidon YS151 cyberbrain, where the user has had a majority of the brain cyberized and a metal shell installed. This cyberbrain is specialized to enhance a user's fabrication and construction abilities.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsYS151Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsYS151Cyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Construction>2</Construction>
+			<Crafting>2</Crafting>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.30</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.15</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<GeneralLaborSpeed>0.35</GeneralLaborSpeed> <!-- YS151 specific-->
+					<SmeltingSpeed>0.35</SmeltingSpeed> <!-- YS151 specific-->
+					<ConstructionSpeed>0.35</ConstructionSpeed> <!-- YS151 specific-->
+					<ConstructSuccessChance>0.18</ConstructSuccessChance> <!-- YS151 specific-->
+					<SmoothingSpeed>0.30</SmoothingSpeed> <!-- YS151 specific-->
+					<FixBrokenDownBuildingSuccessChance>0.18</FixBrokenDownBuildingSuccessChance> <!-- YS151 specific-->
+					<GlobalLearningFactor>0.60</GlobalLearningFactor>
+					<ResearchSpeed>0.10</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.20</MeditationFocusGain>
+					<MentalBreakThreshold>0.12</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2.2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainAdvancedBase">
+		<defName>gitsYS151Cyberbrain</defName>
+		<label>Poseidon YS151 cyberbrain</label>
+		<description>This advanced Poseidon YS151 cyberbrain focuses on enhancing a user's fabrication and construction abilities.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsYS151Hediff</HediffDef>
+			<RecipeDef>gitsInstallYS151Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallAdvancedCyberbrainBase">
+		<defName>gitsInstallYS151Cyberbrain</defName>
+		<label>install Poseidon YS151 cyberbrain</label>
+		<description>Install a Poseidon YS151 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsYS151Cyberbrain</ThingDef>
+			<HediffDef>gitsYS151Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Poseidon YS151 Cyberbrain.</jobString>
+		<addsHediff>gitsYS151Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsYS151Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsYS151Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+<!-- Poseidon XS176 Cyberbrain-->
+	<HediffDef ParentName="gitsAddedCyberbrainAdvWorkBase">
+		<defName>gitsXS176Hediff</defName>
+		<label>Poseidon XS176 cyberbrain</label>
+		<labelNoun>an installed XS176 cyberbrain</labelNoun>
+		<description>An advanced Poseidon XS176 cyberbrain, where the user has had a majority of the brain cyberized and a metal shell installed. This cyberbrain is specialized to enhance a user's fabrication, data analysis and research abilities.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsXS176Cyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsXS176Cyberbrain</spawnThingOnRemoved>
+		<aptitudes MayRequire="Ludeon.RimWorld.Anomaly">
+			<Crafting>2</Crafting>
+			<Intellectual>2</Intellectual>
+		</aptitudes>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>96</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.30</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.15</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<GeneralLaborSpeed>0.30</GeneralLaborSpeed> <!-- XS176 specific-->
+					<SmeltingSpeed>0.30</SmeltingSpeed> <!-- XS176 specific-->
+					<ResearchSpeed>0.45</ResearchSpeed> <!-- XS176 specific-->
+					<ReadingSpeed>0.30</ReadingSpeed> <!-- XS176 specific-->
+					<HackingSpeed MayRequire="Ludeon.RimWorld.Ideology">1.85</HackingSpeed> <!-- XS176 specific-->
+					<GlobalLearningFactor>0.60</GlobalLearningFactor>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.20</MeditationFocusGain>
+					<MentalBreakThreshold>0.12</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2.2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainAdvancedBase">
+		<defName>gitsXS176Cyberbrain</defName>
+		<label>Poseidon XS176 cyberbrain</label>
+		<description>This advanced Poseidon XS176 cyberbrain focuses on enhancing a user's fabrication, data analysis and research abilities.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsXS176Hediff</HediffDef>
+			<RecipeDef>gitsInstallXS176Cyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallAdvancedCyberbrainBase">
+		<defName>gitsInstallXS176Cyberbrain</defName>
+		<label>install Poseidon XS176 cyberbrain</label>
+		<description>Install a Poseidon XS176 cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsXS176Cyberbrain</ThingDef>
+			<HediffDef>gitsXS176Hediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Poseidon XS176 Cyberbrain.</jobString>
+		<addsHediff>gitsXS176Hediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsXS176Cyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsXS176Cyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+</Defs>

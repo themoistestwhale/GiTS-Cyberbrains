@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Micromachines and Cyberbrain Research Projects-->
+<Defs>
+<!-- X0-->
+  <ResearchProjectDef>
+    <defName>gitsResearchMicromachines</defName>
+    <label>micromachines</label>
+    <tab>gitsResearch</tab>
+    <description>Create microscopic machines that are one millionth of a millimeter in size. These tiny nanites can be programmed for a variety of tasks.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>Fabrication</li>
+		</prerequisites>
+    <researchViewX>0</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+
+<!-- X1-->
+  <ResearchProjectDef>
+    <defName>gitsResearchNaniteGrafting</defName>
+    <label>nanite grafting</label>
+    <tab>gitsResearch</tab>
+    <description>Expand on micromachine technology to allow the grafting of nanites into organic material, allowing them to root themselves in between cells. These nanites cannot be removed from brain tissue when they die, but this is also not considered a problem due to their small size.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>gitsResearchMicromachines</li>
+		</prerequisites>
+    <researchViewX>1</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>gitsResearchCyberInterface</defName>
+    <label>cybernetic interfaces</label>
+    <tab>gitsResearch</tab>
+    <description>Design features known as Fort Plugs to interface with the human brain, providing an output from a human brain to other technologies and microelectronics.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>gitsResearchMicromachines</li>
+		</prerequisites>
+    <researchViewX>1</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>gitsResearchNet</defName>
+    <label>the Net</label>
+    <tab>gitsResearch</tab>
+    <description>Build the basis for a local net, a wireless network connected to by cyberbrains and devices alike. The net allows communication and access to a vast amount of information.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>MicroelectronicsBasics</li>
+		</prerequisites>
+    <researchViewX>1</researchViewX>
+    <researchViewY>3</researchViewY>
+  </ResearchProjectDef>
+
+<!-- X2-->
+  <ResearchProjectDef>
+    <defName>gitsResearchBrainCyberization</defName>
+    <label>central nervous system cyberization</label>
+    <tab>gitsResearch</tab>
+    <description>Develop the capability to cyberize the central nervous system of a human, thereby creating a cyberbrain. This process will allow a large amount of increased capability for the user, but may yield various drawbacks as well.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>gitsResearchNaniteGrafting</li>
+			<li>gitsResearchCyberInterface</li>
+		</prerequisites>
+    <researchViewX>2</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>gitsResearchCyberNetIntegration</defName>
+    <label>cyberbrain net integration</label>
+    <tab>gitsResearch</tab>
+    <description>Integrate a wideband wireless connection between cyberbrains and the net, allowing users to access and communicate over the net at all times.</description>
+    <baseCost>400</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+      <li>gitsResearchCyberInterface</li>
+			<li>gitsResearchNet</li>
+		</prerequisites>
+    <researchViewX>2</researchViewX>
+    <researchViewY>3</researchViewY>
+  </ResearchProjectDef>
+
+<!-- X3-->
+  <!--ResearchProjectDef> //not yet implemented
+    <defName>gitsResearchInterceptors</defName>
+    <label>interceptors</label>
+    <tab>gitsResearch</tab>
+    <description>Create micromachines for offensive capability once implanted into a subject human. The subject can be blinded by these cheap nanites, or used as surveillance drones to spy on their movements.</description>
+    <baseCost>1300</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>gitsResearchNaniteGrafting</li>
+		</prerequisites>
+    <researchViewX>3</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef-->
+
+  <ResearchProjectDef>
+    <defName>gitsResearchImmunityNanites</defName>
+    <label>disease combatant nanites</label>
+    <tab>gitsResearch</tab>
+    <description>Allows the usage of micromachines to combat various diseases by programming them to boost the immune system or even directly attack bacteria and viruses, thereby yielding faster recovery times once applied to a human suffering from a disease.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>gitsResearchNaniteGrafting</li>
+		</prerequisites>
+    <researchViewX>3</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>gitsResearchBasicCyberization</defName>
+    <label>basic cyberization</label>
+    <tab>gitsResearch</tab>
+    <description>Allows the cyberization of the central nervous system in a minimally intrusive method, granting the user access to the net as well as some improvement to their neurokinetics and consciousness with essentially no drawbacks.\n\nThis process has nanites interface with the cerebellum, creating a micromachine matrix that outputs to Fort Plugs located below the cerebellum. Additionally, a thin metal shell is installed to physically protect the cyberbrain.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+      <li>gitsResearchBrainCyberization</li>
+      <li>gitsResearchCyberNetIntegration</li>
+		</prerequisites>
+    <researchViewX>3</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+
+<!-- X4-->
+  <!--ResearchProjectDef> //not yet implemented
+    <defName>gitsResearchGhostHacking</defName>
+    <label>ghost hacking</label>
+    <tab>gitsResearch</tab>
+    <description>placeholder</description>
+    <baseCost>2500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+      <li>gitsResearchBasicCyberization</li>
+    //probably needs another?
+		</prerequisites>
+    <researchViewX>4</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef-->
+
+  <ResearchProjectDef>
+    <defName>gitsToxinRepairNanites</defName>
+    <label>toxin combatant nanites</label>
+    <tab>gitsResearch</tab>
+    <description>Create nanites to combat toxins damaging the body and program them to aid the body in repairing itself after the fact. This will allow the usage of micromachines to fight food poisoning and toxin buildup in the human body.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>gitsResearchImmunityNanites</li>
+		</prerequisites>
+    <researchViewX>4</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>gitsResearchEnhancedCyberization</defName>
+    <label>enhanced cyberization</label>
+    <tab>gitsResearch</tab>
+    <description>Allows further cyberization of the brain, with a large amount now replaced by advanced neurocircuits, although some is retained for the retention of the user ghost. This will see vastly improved benefits, but users also may begin to see drawbacks at this stage.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>gitsResearchBasicCyberization</li>
+		</prerequisites>
+    <researchViewX>4</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>gitsResearchSpecializedCyberization</defName>
+    <label>specialized cyberization</label>
+    <tab>gitsResearch</tab>
+    <description>Allows for the implementation of specialized neurocircuitry into the user, as well as generally furthering the amount of brain replaced by technology. This will see vastly improved benefits, but users also may begin to see drawbacks at this stage.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>gitsResearchBasicCyberization</li>
+		</prerequisites>
+    <researchViewX>4</researchViewX>
+    <researchViewY>3</researchViewY>
+  </ResearchProjectDef>
+
+<!-- X5-->
+  <ResearchProjectDef>
+    <defName>gitsResearchExtremeCyberization</defName>
+    <label>extreme cyberization</label>
+    <tab>gitsResearch</tab>
+    <description>Replace almost all of the human brain, leaving only a miniscule amount for the retention of the user ghost. This will lead to unique and incredible abilities not seen before in any other cyberbrain, but immense drawbacks to the mental state of the user.</description>
+    <baseCost>2500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>gitsResearchEnhancedCyberization</li>
+		</prerequisites>
+    <researchViewX>5</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>gitsResearchAdvSpecializedCyberization</defName>
+    <label>advanced specialized cyberization</label>
+    <tab>gitsResearch</tab>
+    <description>Allows for improved specialized cyberbrains, integrating multiple related specializations into one cyberbrain for increased versitility.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>gitsResearchSpecializedCyberization</li>
+		</prerequisites>
+    <researchViewX>5</researchViewX>
+    <researchViewY>3</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>gitsResearchCombatCyberization</defName>
+    <label>combat cyberization</label>
+    <tab>gitsResearch</tab>
+    <description>Allows the creation of specialized cyberbrains for combat, these cyberbrains feature reinforced physical cyberbrain shells as well as applied technologies to further the combat abilities of its user.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Spacer</techLevel>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+		<prerequisites>
+			<li>gitsResearchSpecializedCyberization</li>
+		</prerequisites>
+    <researchViewX>5</researchViewX>
+    <researchViewY>4</researchViewY>
+  </ResearchProjectDef>
+</Defs>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Basic Cyberbrain-->
+<Defs>
+	<HediffDef ParentName="gitsAddedCyberbrainBasicBase">
+		<defName>gitsBasicCyberbrainHediff</defName>
+		<label>Basic cyberbrain</label>
+		<labelNoun>an installed basic cyberbrain</labelNoun>
+		<description>A basic cyberized brain, where the user has had the cerebellum cyberized and a thin metal shell installed. This procedure leaves a majority of the brain intact, and provides increased capacity compared to the original brain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsBasicCyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsBasicCyberbrain</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.30</painFactor>
+				<hungerRateFactorOffset>0.25</hungerRateFactorOffset>
+				<restFallFactorOffset>0.10</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>296</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.10</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<GlobalLearningFactor>0.05</GlobalLearningFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainBasicBase">
+		<defName>gitsBasicCyberbrain</defName>
+		<label>Basic cyberbrain</label>
+		<description>This generic basic cyberbrain is the least intrusive form existing, aiming to provide the user a basic interface to the net and a framework for other technologies to interface with the user via 'Fort Plugs' located below the cerebellum.\n\nThe cyberization method has micromachines are inserted into the cerebellum, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nThis form of cyberization provides no drawbacks to the user, as most of the brain remains unaffected by the procedure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsBasicCyberbrainHediff</HediffDef>
+			<RecipeDef>gitsInstallBasicCyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallBasicCyberbrainBase">
+		<defName>gitsInstallBasicCyberbrain</defName>
+		<label>install basic cyberbrain</label>
+		<description>Install a basic cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsBasicCyberbrain</ThingDef>
+			<HediffDef>gitsBasicCyberbrainHediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Basic Cyberbrain.</jobString>
+		<addsHediff>gitsBasicCyberbrainHediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsBasicCyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsBasicCyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+</Defs>

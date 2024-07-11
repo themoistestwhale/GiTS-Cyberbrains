@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- GiTS Enhanced Cyberbrain-->
+<Defs>
+	<HediffDef ParentName="gitsAddedCyberbrainEnhancedBase">
+		<defName>gitsEnhancedCyberbrainHediff</defName>
+		<label>Enhanced cyberbrain</label>
+		<labelNoun>an installed enhanced cyberbrain</labelNoun>
+		<description>An enhanced cyberized brain, where the user has had a majority of the brain cyberized and a metal shell installed. This procedure provides overall increased capacity compared to the original brain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsEnhancedCyberbrain</ThingDef>
+		</descriptionHyperlinks>
+		<spawnThingOnRemoved>gitsEnhancedCyberbrain</spawnThingOnRemoved>
+		<stages>
+			<li>
+				<label>adapting</label>
+				<painFactor>1.35</painFactor>
+				<hungerRateFactorOffset>0.50</hungerRateFactorOffset>
+				<restFallFactorOffset>0.25</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.05</offset>
+					</li>
+				</capMods>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsCyberbrainSclerosis</hediff>
+            <mtbDays>214</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+          <li Class="HediffGiver_Random">
+            <hediff>gitsClosedShellSyndrome</hediff>
+            <mtbDays>128</mtbDays>
+            <partsToAffect>
+              <li>Brain</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+			</li>
+			<li>
+				<minSeverity>0.999</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+				<socialFightChanceFactor>1.5</socialFightChanceFactor>
+				<statOffsets>
+					<GlobalLearningFactor>0.50</GlobalLearningFactor>
+					<ResearchSpeed>0.05</ResearchSpeed>
+					<MeditationFocusGain MayRequire="Ludeon.RimWorld.Royalty">0.10</MeditationFocusGain>
+					<MentalBreakThreshold>0.08</MentalBreakThreshold>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<ThingDef ParentName="gitsBodyPartCyberbrainEnhancedBase">
+		<defName>gitsEnhancedCyberbrain</defName>
+		<label>Enhanced cyberbrain</label>
+		<description>This generic cyberbrain is an enhanced variation that sees the user replace more of their brain matter, specifically in the cerebrum and corpus callosum, with micro-components providing heightened capabilities overall.\n\nThe cyberization method has micromachines are inserted into the brain, integrating with larger scale microcircuitry and creating interfaces with the brain. The resulting tissue is a hybridization of organic nervous tissue and cybernetic components, and is superior to the original in everyway.\n\nWith only about 20% of original brain matter remaining for ghost retention, drawbacks have begun to present themselves due to cyberization. The user has begun to show heightened emotions as their brain is less capable of dampening such, and is also more likely to crack under pressure.</description>
+		<descriptionHyperlinks>
+			<HediffDef>gitsEnhancedCyberbrainHediff</HediffDef>
+			<RecipeDef>gitsInstallEnhancedCyberbrain</RecipeDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<RecipeDef ParentName="gitsSurgeryInstallEnhancedCyberbrainBase">
+		<defName>gitsInstallEnhancedCyberbrain</defName>
+		<label>install enhanced cyberbrain</label>
+		<description>Install an enhanced cyberbrain.</description>
+		<descriptionHyperlinks>
+			<ThingDef>gitsEnhancedCyberbrain</ThingDef>
+			<HediffDef>gitsEnhancedCyberbrainHediff</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing Enhanced Cyberbrain.</jobString>
+		<addsHediff>gitsEnhancedCyberbrainHediff</addsHediff>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>gitsEnhancedCyberbrain</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>gitsEnhancedCyberbrain</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+</Defs>
